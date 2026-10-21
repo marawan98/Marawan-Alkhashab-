@@ -26,6 +26,15 @@ const {
 } = process.env;
 
 // Middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -250,6 +259,44 @@ app.get('/api/discord/guild', async (req, res) => {
 // ==========================================
 // 2.5 STEAM WEB STORE & SEARCH API PROXY
 // ==========================================
+app.get('/api/steam/featured', async (req, res) => {
+  try {
+    const featuredUrl = 'https://store.steampowered.com/api/featuredcategories/?cc=us&l=arabic';
+    const response = await axios.get(featuredUrl, { timeout: 7000 });
+    const topSellers = (response.data.top_sellers && response.data.top_sellers.items) || [];
+    const specials = (response.data.specials && response.data.specials.items) || [];
+    
+    const combined = [...topSellers, ...specials];
+    const seen = new Set();
+    const items = [];
+    
+    for (const item of combined) {
+      if (seen.has(item.id)) continue;
+      seen.add(item.id);
+      
+      const priceText = item.discount_percent > 0
+        ? `$${(item.final_price / 100).toFixed(2)} (-${item.discount_percent}%)`
+        : (item.final_price === 0 ? 'مجانية (Free)' : `$${(item.final_price / 100).toFixed(2)}`);
+        
+      items.push({
+        id: item.id,
+        appId: item.id,
+        name: item.name,
+        price: priceText,
+        discount: item.discount_percent || 0,
+        image: item.header_image || `https://cdn.cloudflare.steamstatic.com/steam/apps/${item.id}/header.jpg`,
+        steamUrl: `https://store.steampowered.com/app/${item.id}`,
+        steamLaunchUrl: `steam://run/${item.id}`
+      });
+    }
+    
+    return res.json({ total: items.length, items });
+  } catch (err) {
+    console.error('Steam Featured API Error:', err.message);
+    return res.status(500).json({ error: 'Failed to fetch featured Steam games' });
+  }
+});
+
 app.get('/api/steam/search', async (req, res) => {
   const query = req.query.term || req.query.q || '';
   if (!query.trim()) {

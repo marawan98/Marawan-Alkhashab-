@@ -50,6 +50,7 @@
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> <span data-i18n="navHome">الرئيسية</span></a></li>
         <li><a href="#games" class="nav-link"><i class="fa-solid fa-gamepad"></i> <span data-i18n="navGames">مكتبة الألعاب</span></a></li>
+        <li><a href="#games" class="nav-link" onclick="if(window.selectSteamFilter)window.selectSteamFilter();" style="color: #66c0f4;"><i class="fa-brands fa-steam"></i> <span>منصة Steam</span></a></li>
         <li><a href="#valorant-hub" class="nav-link"><i class="fa-solid fa-crosshairs"></i> <span data-i18n="navVal">فالورانت</span></a></li>
         <li><a href="#gta-universe" class="nav-link"><i class="fa-solid fa-car-side"></i> <span data-i18n="navGta">عالم GTA</span></a></li>
         <li><a href="#creed-saga" class="nav-link"><i class="fa-solid fa-khanda"></i> <span data-i18n="navAc">أساسنز كريد</span></a></li>
@@ -222,6 +223,36 @@
         </p>
       </div>
 
+      <!-- Steam Live Feature Banner -->
+      <div class="steam-live-banner" style="background: linear-gradient(135deg, rgba(23, 26, 33, 0.95), rgba(27, 40, 56, 0.95)); border: 1px solid #66c0f4; border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(102, 192, 244, 0.2);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: #171a21; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #66c0f4; border: 1px solid #66c0f4; flex-shrink: 0;">
+              <i class="fa-brands fa-steam"></i>
+            </div>
+            <div>
+              <h3 style="color: #fff; font-size: 1.2rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px;">
+                منصة Steam الرسمية • بحث مباشر وتشغيل فوري
+                <span style="background: #0284c7; color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; font-weight: 700;">LIVE API</span>
+              </h3>
+              <p style="color: #94a3b8; font-size: 0.85rem; margin: 4px 0 0 0;">
+                اكتب أي لعبة في شريط البحث أدناه للبحث عنها مباشرة في متجر Steam بالكامل دون مغادرة الموقع، أو اضغط لعرض مكتبة ألعاب ستيم المجهزة.
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="if(window.selectSteamFilter)window.selectSteamFilter();" style="background: linear-gradient(135deg, #1b2838, #2a475e); border: 1px solid #66c0f4; color: #66c0f4; padding: 0.6rem 1.2rem; font-size: 0.88rem; cursor: pointer;">
+              <i class="fa-brands fa-steam"></i>
+              <span>عرض ألعاب Steam</span>
+            </button>
+            <a href="steam://open/main" class="btn-secondary" style="border-color: #66c0f4; color: #fff; padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+              <i class="fa-solid fa-play"></i>
+              <span>فتح تطبيق Steam</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Search & Filters Container -->
       <div class="filter-controls-wrap">
         
@@ -242,7 +273,14 @@
             <button class="filter-tab-btn active" data-filter="all">
               <i class="fa-solid fa-border-all"></i>
               <span data-i18n="tabAll">جميع الألعاب</span>
-              <span class="filter-tab-badge">20</span>
+              <span class="filter-tab-badge">41+</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="steam" style="border-color: rgba(102, 192, 244, 0.6); color: #66c0f4;">
+              <i class="fa-brands fa-steam" style="color: #66c0f4;"></i>
+              <span data-i18n="tabSteam">ألعاب Steam</span>
+              <span class="filter-tab-badge" id="steamCountBadge" style="background: #0284c7; color: #fff;">21+ Live</span>
             </button>
           </li>
           <li>
@@ -263,13 +301,6 @@
               <i class="fa-solid fa-khanda"></i>
               <span data-i18n="tabAc">سلسلة Assassin's Creed الكاملة</span>
               <span class="filter-tab-badge">14</span>
-            </button>
-          </li>
-          <li>
-            <button class="filter-tab-btn" data-filter="steam">
-              <i class="fa-brands fa-steam" style="color: #66c0f4;"></i>
-              <span data-i18n="tabSteam">ألعاب Steam</span>
-              <span class="filter-tab-badge" id="steamCountBadge">Live</span>
             </button>
           </li>
           <li>
@@ -457,7 +488,7 @@
 
         <div>
           <span class="gta6-badge"><i class="fa-solid fa-fire"></i> THE NEXT CHAPTER • VICE CITY</span>
-          <h2 class="gta6-title">Grand Theft Auto <span style="color: #f472b6;">6</span></h2>
+          <h2 class="gta6-title">Grand Theft Auto <span style="color: #f472b6;">VI</span></h2>
           <p class="gta6-desc">
             استعدوا للحدث الترفيهي الأضخم على الإطلاق. ولاية ليونيدا، قصة لوسيا وجيسون، وعالم مفتوح ينبض بالحياة بأدق التفاصيل والرسوم الجبارة التي تعيد تعريف الجيمنج عالمياً.
           </p>
@@ -466,23 +497,23 @@
           <div class="countdown-container">
             <div class="countdown-title">
               <i class="fa-solid fa-stopwatch" style="color: #f472b6;"></i>
-              <span>العد التنازلي لإطلاق Grand Theft Auto 6:</span>
+              <span>العد التنازلي لإطلاق Grand Theft Auto VI:</span>
             </div>
             <div class="countdown-grid">
               <div class="countdown-box">
-                <div class="countdown-val" id="cdDays">00</div>
+                <div class="countdown-val" id="cdDays">391</div>
                 <div class="countdown-unit">أيام</div>
               </div>
               <div class="countdown-box">
-                <div class="countdown-val" id="cdHours">00</div>
+                <div class="countdown-val" id="cdHours">04</div>
                 <div class="countdown-unit">ساعات</div>
               </div>
               <div class="countdown-box">
-                <div class="countdown-val" id="cdMins">00</div>
+                <div class="countdown-val" id="cdMins">19</div>
                 <div class="countdown-unit">دقائق</div>
               </div>
               <div class="countdown-box">
-                <div class="countdown-val" id="cdSecs">00</div>
+                <div class="countdown-val" id="cdSecs">08</div>
                 <div class="countdown-unit">ثوانٍ</div>
               </div>
             </div>
@@ -491,11 +522,11 @@
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <button class="btn-primary" onclick="openGameModal('gta6')" style="background: linear-gradient(135deg, #ec4899, #9333ea);">
               <i class="fa-solid fa-eye"></i>
-              <span>تفاصيل وتوقعات GTA 6</span>
+              <span>تفاصيل وتوقعات Grand Theft Auto VI</span>
             </button>
-            <button class="btn-secondary" onclick="openGameModal('gtav')">
+            <button class="btn-secondary" onclick="openGameModal('gta6')">
               <i class="fa-solid fa-city"></i>
-              <span>استعراض GTA V & Online</span>
+              <span>استعراض Grand Theft Auto VI</span>
             </button>
           </div>
         </div>
@@ -550,9 +581,9 @@
       <!-- Section Header -->
       <div class="section-header">
         <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; color: #fbbf24;">
-          <i class="fa-solid fa-desktop"></i> MARAWAN'S BATTLESTATION • GAMING RIG
+          <i class="fa-solid fa-desktop"></i> AL KHASHAB BATTLESTATION • GAMING RIG
         </span>
-        <h2 class="section-title">مواصفات <span class="gradient-text">جهازي</span> - Al Khashab Gaming Rig</h2>
+        <h2 class="section-title">مواصفات جهاز <span class="gradient-text">Al Khashab</span></h2>
         <p class="section-desc">
           المواصفات والعتاد الاحترافي لتجميعة الألعاب والبث الخاصة بي لتشغيل أقوى ألعاب الجيل بأعلى إطارات وأفضل أداء.
         </p>
@@ -822,10 +853,14 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="modal-actions">
+        <div class="modal-actions" id="modalActionsWrap">
           <a href="#" target="_blank" rel="noopener" id="modalPlayBtn" class="btn-primary">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <span>الانتقال للمتجر أو اللعب الآن</span>
+          </a>
+          <a href="#" id="modalSteamLaunchBtn" class="btn-steam-run" style="display: none;">
+            <i class="fa-brands fa-steam"></i>
+            <span>تشغيل فوري عبر تطبيق Steam</span>
           </a>
           <button class="btn-secondary" onclick="closeGameModal()">
             <span>إغلاق النافذة</span>

@@ -511,6 +511,575 @@ const GAMES_DATA = [
     ramRec: "2 GB",
     platforms: ["PC", "PS3", "Xbox 360"],
     playUrl: "https://store.steampowered.com/app/15100"
+  },
+
+  // --- STEAM ALL-TIME BLOCKBUSTERS ---
+  {
+    id: "cs2",
+    titleAr: "كاونتر سترايك 2 (CS2)",
+    titleEn: "Counter-Strike 2",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2023",
+    rating: "9.5",
+    developer: "Valve",
+    genreAr: "تصويب تكتيكي تنافسي 5v5",
+    genreEn: "Tactical Competitive Multiplayer FPS",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",
+    badgeTextAr: "أسطورة ستيم الأولى",
+    badgeTextEn: "#1 Steam Legend",
+    synopsisAr: "أضخم قفزة تقنية في تاريخ سلسلة كاونتر سترايك بمحرك Source 2. فيزياء الدخان الحجمي المتفاعلة مع الرصاص، معدل تحديث Sub-tick فائق الدقة، وخرائط تنافسية أسطورية مجددة بالكامل.",
+    synopsisEn: "The largest technical leap in Counter-Strike history built on Source 2. Dynamic volumetric smokes, sub-tick precision, and overhauled legendary competitive maps.",
+    cpuMin: "4 hardware CPU threads - Intel Core i5 750 / AMD equivalent",
+    gpuMin: "Video card must be 1 GB or more with DirectX 11 / Shader Model 5.0",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i7-9700K / AMD Ryzen 7 3700X",
+    gpuRec: "NVIDIA GeForce RTX 2060 / AMD Radeon RX 5700",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/730/CounterStrike_2/",
+    steamAppId: "730",
+    isSteam: true
+  },
+  {
+    id: "rdr2",
+    titleAr: "ريد ديد ريدمبشن 2",
+    titleEn: "Red Dead Redemption 2",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2019",
+    rating: "9.9",
+    developer: "Rockstar Games",
+    genreAr: "عالم مفتوح / ملحمة الغرب الأمريكي",
+    genreEn: "Open World / Western Action-Adventure",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg",
+    badgeTextAr: "تحفة القرن الفنية",
+    badgeTextEn: "Masterpiece of the Era",
+    synopsisAr: "الملحمة الأسطورية لآرثر مورغان وعصابة فان دير ليند في الغرب الأمريكي مع نهاية عصر الخارجين عن القانون عام 1899. أضخم وأعمق عالم مفتوح تفاعلي وواقعي في تاريخ الألعاب.",
+    synopsisEn: "Arthur Morgan and the Van der Linde gang flee across 1899 America at the dawn of the modern age. An undisputed storytelling and open-world masterpiece.",
+    cpuMin: "Intel Core i5-2500K / AMD FX-6300",
+    gpuMin: "NVIDIA GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+    gpuRec: "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam", "PS5", "Xbox"],
+    playUrl: "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+    steamAppId: "1174180",
+    isSteam: true
+  },
+  {
+    id: "eldenring",
+    titleAr: "إلدن رينج (ELDEN RING)",
+    titleEn: "ELDEN RING",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2022 / 2024",
+    rating: "9.9",
+    developer: "FromSoftware",
+    genreAr: "آر بي جي سولز / عالم مظلم أسطوري",
+    genreEn: "Action RPG / Dark Fantasy Souls-Like",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
+    badgeTextAr: "لعبة العام (GOTY)",
+    badgeTextEn: "Game of the Year",
+    synopsisAr: "التحفة الحاصلة على جوائز لعبة العام من إبداع هيديتاكا ميازاكي وجورج ر.ر. مارتن. استكشف الأراضي الواقعة بين العوالم واهزم الزعماء الجبابرة لتصبح السيد الإلدني.",
+    synopsisEn: "The dark fantasy action RPG phenomenon created by Hidetaka Miyazaki and George R. R. Martin. Journey across the Lands Between to claim the Elden Ring.",
+    cpuMin: "Intel Core i5-8400 / AMD Ryzen 3 3300X",
+    gpuMin: "NVIDIA GeForce GTX 1060 3GB / AMD Radeon RX 580 4GB",
+    ramMin: "12 GB",
+    cpuRec: "Intel Core i7-8700K / AMD Ryzen 5 3600X",
+    gpuRec: "NVIDIA GeForce GTX 1070 8GB / AMD Radeon RX Vega 56 8GB",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam", "PS5", "Xbox"],
+    playUrl: "https://store.steampowered.com/app/1245620/ELDEN_RING/",
+    steamAppId: "1245620",
+    isSteam: true
+  },
+  {
+    id: "wukong",
+    titleAr: "بلاك ميث: ووكونغ",
+    titleEn: "Black Myth: Wukong",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2024",
+    rating: "9.8",
+    developer: "Game Science",
+    genreAr: "أكشن آر بي جي / أساطير صينية ملحمية",
+    genreEn: "Action RPG / Chinese Mythology Epic",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg",
+    badgeTextAr: "ظاهرة ستيم القياسية",
+    badgeTextEn: "All-Time Steam Record",
+    synopsisAr: "انطلق بشخصية المقدر له المستوحاة من رواية رحلة إلى الغرب، وحارب عبر عوالم أسطورية مليئة بالوحوش والأسرار بمحرك Unreal Engine 5 في اللعبة التي حطمت أرقام ستيم القياسية.",
+    synopsisEn: "Set out as the Destined One in this mythical Unreal Engine 5 action RPG rooted in Chinese mythology that shattered global Steam player records.",
+    cpuMin: "Intel Core i5-8400 / AMD Ryzen 5 1600",
+    gpuMin: "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 8GB",
+    ramMin: "16 GB",
+    cpuRec: "Intel Core i7-9700 / AMD Ryzen 5 5500",
+    gpuRec: "NVIDIA GeForce RTX 2060 / RTX 4070 (DLSS Enabled)",
+    ramRec: "16 GB - 32 GB",
+    platforms: ["PC", "Steam", "PS5"],
+    playUrl: "https://store.steampowered.com/app/2358720/Black_Myth_Wukong/",
+    steamAppId: "2358720",
+    isSteam: true
+  },
+  {
+    id: "pubg",
+    titleAr: "ببجي: باتل جراوندز",
+    titleEn: "PUBG: BATTLEGROUNDS",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2017 - 2024",
+    rating: "9.2",
+    developer: "KRAFTON",
+    genreAr: "باتل رويال تكتيكي 100 لاعب",
+    genreEn: "100-Player Tactical Battle Royale",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg",
+    badgeTextAr: "مؤسس الباتل رويال",
+    badgeTextEn: "Battle Royale Icon",
+    synopsisAr: "اهبط بالمظلة مع 100 لاعب في خرائط عملاقة، ابحث عن الأسلحة والمركبات، وتنافس استراتيجياً داخل المنطقة الزرقاء لتكون آخر الناجين (Winner Winner Chicken Dinner).",
+    synopsisEn: "Land, loot, and outsurvive 99 players in high-stakes tactical battlegrounds for the ultimate Chicken Dinner.",
+    cpuMin: "Intel i5-4430 / AMD FX-6300",
+    gpuMin: "NVIDIA GeForce GTX 960 2GB / AMD Radeon R7 370 2GB",
+    ramMin: "8 GB",
+    cpuRec: "Intel i5-6600K / AMD Ryzen 5 1600",
+    gpuRec: "NVIDIA GeForce GTX 1060 3GB / AMD Radeon RX 580 4GB",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam", "PS5", "Xbox"],
+    playUrl: "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+    steamAppId: "578080",
+    isSteam: true
+  },
+  {
+    id: "cyberpunk2077",
+    titleAr: "سايبربانك 2077: فانتوم ليبرتي",
+    titleEn: "Cyberpunk 2077: Phantom Liberty",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2020 / 2024",
+    rating: "9.6",
+    developer: "CD PROJEKT RED",
+    genreAr: "عالم مفتوح سيبراني / آر بي جي مستقبلي",
+    genreEn: "Action RPG / Open World Cyberpunk",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
+    badgeTextAr: "عالم النيون الأسطوري",
+    badgeTextEn: "Ray Tracing Overdrive",
+    synopsisAr: "تقمص شخصية V المرتزق المعدل سيبرانياً في شوارع نايت سيتي ومنطقة دوغ تاون المشبعة بالنيون والمؤامرات مع النجمين كيانو ريفز وإدريس إلبا في تجربة بصرية خارقة.",
+    synopsisEn: "Enter the cyber-enhanced criminal underbelly of Night City alongside Keanu Reeves and Idris Elba with groundbreaking Ray Tracing Overdrive visuals.",
+    cpuMin: "Intel Core i7-6700 / AMD Ryzen 5 1600",
+    gpuMin: "NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 8GB",
+    ramMin: "12 GB",
+    cpuRec: "Intel Core i7-12700 / AMD Ryzen 7 7800X3D",
+    gpuRec: "NVIDIA GeForce RTX 3080 / RTX 4080 (RTX Path Tracing)",
+    ramRec: "16 GB - 32 GB",
+    platforms: ["PC", "Steam", "PS5", "Xbox"],
+    playUrl: "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+    steamAppId: "1091500",
+    isSteam: true
+  },
+  {
+    id: "baldursgate3",
+    titleAr: "بوابات بالدور 3 (Baldur's Gate 3)",
+    titleEn: "Baldur's Gate 3",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2023",
+    rating: "9.9",
+    developer: "Larian Studios",
+    genreAr: "آر بي جي كلاسيكي / حرية مطلقة (GOTY)",
+    genreEn: "Action RPG / D&D Fantasy Adventure",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg",
+    badgeTextAr: "لعبة عام 2023 GOTY",
+    badgeTextEn: "Game of the Year",
+    synopsisAr: "التحفة الفائزة بلقب لعبة العام GOTY. تجربة تقمص أدوار تعتمد على خياراتك وقراراتك بحرية لا نهائية في عالم Dungeons & Dragons الساحر.",
+    synopsisEn: "The monumental Game of the Year winner. Gather your party and return to the Forgotten Realms in a tale of fellowship and betrayal.",
+    cpuMin: "Intel i5-4690 / AMD FX 8350",
+    gpuMin: "Nvidia GTX 970 / RX 480 (4GB+)",
+    ramMin: "8 GB",
+    cpuRec: "Intel i7 8700K / AMD r5 3600",
+    gpuRec: "Nvidia 2060 Super / RX 5700 XT (8GB+)",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+    steamAppId: "1086940",
+    isSteam: true
+  },
+  {
+    id: "helldivers2",
+    titleAr: "هيل دايفرز 2 (HELLDIVERS™ 2)",
+    titleEn: "HELLDIVERS™ 2",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2024",
+    rating: "9.4",
+    developer: "Arrowhead Game Studios",
+    genreAr: "تصويب تعاوني فضائي / نشر الديمقراطية",
+    genreEn: "Third-Person Co-Op Galactic Shooter",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg",
+    badgeTextAr: "أقوى لعبة تعاونية 2024",
+    badgeTextEn: "Top Co-Op Hit",
+    synopsisAr: "انضم إلى نخبة Helldivers وقاتل مع أصدقائك عبر المجرة ضد غزو الحشرات والآليين لنشر الحرية والديمقراطية في تجربة فوضوية حماسية ممتعة.",
+    synopsisEn: "The galaxy's last line of offence. Enlist in the Helldivers and join the fight for freedom across a hostile galaxy in a fast, frantic third-person shooter.",
+    cpuMin: "Intel Core i7-4790K / AMD Ryzen 5 1500X",
+    gpuMin: "NVIDIA GeForce GTX 1050 Ti / AMD Radeon RX 470",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i7-9700K / AMD Ryzen 7 3700X",
+    gpuRec: "NVIDIA GeForce RTX 2060 / AMD Radeon RX 6600XT",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam", "PS5"],
+    playUrl: "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
+    steamAppId: "553850",
+    isSteam: true
+  },
+  {
+    id: "eafc25",
+    titleAr: "إي إيه سبورتس إف سي 25 (EA FC 25)",
+    titleEn: "EA SPORTS FC™ 25",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2024",
+    rating: "9.1",
+    developer: "EA Sports",
+    genreAr: "كرة قدم واقعية / ألتميت تيم",
+    genreEn: "Football / Ultimate Team Simulation",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2669320/header.jpg",
+    badgeTextAr: "كرة القدم العالمية",
+    badgeTextEn: "Official Football",
+    synopsisAr: "الجيل الأحدث من تجربة كرة القدم بمحرك FC IQ التكتيكي ونمط Rush 5v5، وتجربة اللعب مع أكثر من 19,000 لاعب و700 فريق مرخص رسمياً.",
+    synopsisEn: "Experience the next chapter of the World's Game with FC IQ tactics, 5v5 Rush mode, and over 19,000 licensed players.",
+    cpuMin: "Intel Core i5-6600K / AMD Ryzen 5 1600",
+    gpuMin: "NVIDIA GeForce GTX 1050 Ti 4GB / AMD Radeon RX 570 4GB",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i7-6700 / AMD Ryzen 7 2700X",
+    gpuRec: "NVIDIA GeForce GTX 1660 / AMD Radeon RX 5600 XT",
+    ramRec: "12 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/2669320/EA_SPORTS_FC_25/",
+    steamAppId: "2669320",
+    isSteam: true
+  },
+  {
+    id: "codwarzone",
+    titleAr: "كول أوف ديوتي: وارزون (Call of Duty Warzone)",
+    titleEn: "Call of Duty®: Warzone™",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2023 / 2024",
+    rating: "9.0",
+    developer: "Infinity Ward / Raven Software",
+    genreAr: "باتل رويال تكتيكي سريع",
+    genreEn: "Free-to-Play Battle Royale FPS",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/header.jpg",
+    badgeTextAr: "باتل رويال الأسلحة",
+    badgeTextEn: "Free-to-Play Warzone",
+    synopsisAr: "انزل في ساحة المعركة الضخمة مع فريقك، تسلح بأقوى العتاد والأسلحة الحربية الحديثة، وقاتل حتى تظل الفرقة الأخيرة الناجية على قيد الحياة.",
+    synopsisEn: "Welcome to Warzone, the massive free-to-play combat arena featuring popular maps, dynamic combat, and seasonal content drops.",
+    cpuMin: "Intel Core i5-6600 / AMD Ryzen 5 1400",
+    gpuMin: "NVIDIA GeForce GTX 960 / AMD Radeon RX 470",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i7-8700K / AMD Ryzen 7 1800X",
+    gpuRec: "NVIDIA GeForce RTX 3060 / AMD Radeon RX 6700 XT",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1938090/Call_of_Duty/",
+    steamAppId: "1938090",
+    isSteam: true
+  },
+  {
+    id: "forzahorizon5",
+    titleAr: "فورزا هورايزن 5 (Forza Horizon 5)",
+    titleEn: "Forza Horizon 5",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2021",
+    rating: "9.7",
+    developer: "Playground Games",
+    genreAr: "سباقات سيارات / عالم مفتوح مكسيكي",
+    genreEn: "Open World Racing / Driving Simulator",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg",
+    badgeTextAr: "ملك سباقات السيارات",
+    badgeTextEn: "Ultimate Racing",
+    synopsisAr: "استكشف مناظر المكسيك النابضة بالحياة من خلف مقود مئات من أعظم سيارات العالم مع فيزياء قيادة استثنائية ورسوم خلابة.",
+    synopsisEn: "Your Ultimate Horizon Adventure awaits! Explore the vibrant landscapes of Mexico with limitless driving action in hundreds of world-class cars.",
+    cpuMin: "Intel i5-4460 / AMD Ryzen 3 1200",
+    gpuMin: "NVidia GTX 970 / AMD RX 470",
+    ramMin: "8 GB",
+    cpuRec: "Intel i7-10700K / AMD Ryzen 7 3800XT",
+    gpuRec: "NVidia RTX 3070 / AMD RX 6800 XT",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1551360/Forza_Horizon_5/",
+    steamAppId: "1551360",
+    isSteam: true
+  },
+  {
+    id: "godofwar",
+    titleAr: "إله الحرب (God of War)",
+    titleEn: "God of War",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2022",
+    rating: "9.8",
+    developer: "Santa Monica Studio",
+    genreAr: "أكشن مغامرات / الميثولوجيا الإسكندنافية",
+    genreEn: "Action-Adventure / Norse Mythology",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg",
+    badgeTextAr: "ملحمة كريتوس الأسطورية",
+    badgeTextEn: "PlayStation Legend on Steam",
+    synopsisAr: "رحلة كراتوس وابنه آتريوس في عوالم الآلهة الإسكندنافية والوحوش الأسطورية، قصة درامية ومغامرة ملحمية بأسلحة الفأس الليفياثان ورسوم 4K مذهلة.",
+    synopsisEn: "His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters.",
+    cpuMin: "Intel i5-2500k (4 core 3.3 GHz) / AMD Ryzen 3 1200 (4 core 3.1 GHz)",
+    gpuMin: "NVIDIA GTX 960 (4 GB) / AMD R9 290X (4 GB)",
+    ramMin: "8 GB",
+    cpuRec: "Intel i7-4770k (4 core 3.5 GHz) / AMD Ryzen 5 1600 (6 core 3.2 GHz)",
+    gpuRec: "NVIDIA GTX 1060 (6 GB) / AMD RX 570 (4 GB)",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1593500/God_of_War/",
+    steamAppId: "1593500",
+    isSteam: true
+  },
+  {
+    id: "spiderman",
+    titleAr: "مارفل سبايدرمان (Marvel's Spider-Man Remastered)",
+    titleEn: "Marvel's Spider-Man Remastered",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2022",
+    rating: "9.7",
+    developer: "Insomniac Games / Nixxes",
+    genreAr: "بطل خارق / تأرجح سينمائي في نيويورك",
+    genreEn: "Open World Super Hero Action",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg",
+    badgeTextAr: "أعظم بطل خارق",
+    badgeTextEn: "Marvel Hit",
+    synopsisAr: "تأرجح بين ناطحات سحاب مانهاتن بشخصية بيتر باركر المخضرم في قتال الجريمة ومواجهة أشهر أشرار مارفل بسرعة وانسيابية خارقة.",
+    synopsisEn: "Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods and defeat villains.",
+    cpuMin: "Intel Core i3-4160, 3.6 GHz or AMD equivalent",
+    gpuMin: "NVIDIA GTX 950 or AMD Radeon RX 470",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i5-4670, 3.4 Ghz or AMD Ryzen 5 1600, 3.2 Ghz",
+    gpuRec: "NVIDIA GTX 1060 6GB or AMD Radeon RX 580 8GB",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/",
+    steamAppId: "1817070",
+    isSteam: true
+  },
+  {
+    id: "rust",
+    titleAr: "رست (Rust)",
+    titleEn: "Rust",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2018 - 2024",
+    rating: "9.3",
+    developer: "Facepunch Studios",
+    genreAr: "بقاء على قيد الحياة / بناء وسرقة قواعد",
+    genreEn: "Multiplayer Hardcore Survival",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg",
+    badgeTextAr: "تحدي البقاء الأشرس",
+    badgeTextEn: "Survival Phenomenon",
+    synopsisAr: "الهدف الوحيد في Rust هو البقاء على قيد الحياة. تغلب على الجوع والعطش والبرد، ابنِ قلعتك الحصينة وتحالف مع أصدقائك لصد غارات اللاعبين الآخرين.",
+    synopsisEn: "The only aim in Rust is to survive. Overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals. Protect yourself.",
+    cpuMin: "Intel Core i7-3770 / AMD FX-9590",
+    gpuMin: "GTX 670 2GB / AMD R9 280",
+    ramMin: "10 GB",
+    cpuRec: "Intel Core i7-4790K / AMD Ryzen 5 1600",
+    gpuRec: "GTX 980 / AMD R9 Fury",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/252490/Rust/",
+    steamAppId: "252490",
+    isSteam: true
+  },
+  {
+    id: "witcher3",
+    titleAr: "ذا ويتشر 3: الصيد البري (The Witcher 3)",
+    titleEn: "The Witcher 3: Wild Hunt",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2015 / 2023",
+    rating: "9.9",
+    developer: "CD PROJEKT RED",
+    genreAr: "آر بي جي أسطوري / صائد الوحوش جيرالت",
+    genreEn: "Story-Driven Action RPG",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg",
+    badgeTextAr: "أيقونة ألعاب الـ RPG",
+    badgeTextEn: "All-Time Masterpiece",
+    synopsisAr: "تقمص دور جيرالت أوف ريفيا، صائد الوحوش المأجور، وابحث عن سيري طفلة النبوءة في عالم خيالي مفتوح مليء بالمدن التجارية وجزر القراصنة والكهوف المنسية.",
+    synopsisEn: "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will.",
+    cpuMin: "Intel CPU Core i5-2500K 3.3GHz / AMD A10-5800K APU (3.8GHz)",
+    gpuMin: "Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870",
+    ramMin: "6 GB",
+    cpuRec: "Intel Core i7 3770 3.4 GHz / AMD FX-8350 4 GHz",
+    gpuRec: "Nvidia GeForce GTX 770 / AMD Radeon R9 290",
+    ramRec: "8 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+    steamAppId: "292030",
+    isSteam: true
+  },
+  {
+    id: "hogwarts",
+    titleAr: "تراث هوجورتس (Hogwarts Legacy)",
+    titleEn: "Hogwarts Legacy",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2023",
+    rating: "9.5",
+    developer: "Avalanche Software",
+    genreAr: "عالم سحري مفتوح / آر بي جي السحرة",
+    genreEn: "Immersive Open World Action RPG",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/990080/header.jpg",
+    badgeTextAr: "عالم هاري بوتر السحري",
+    badgeTextEn: "Wizarding World",
+    synopsisAr: "عش في قلعة هوجوورتس في القرن التاسع عشر. اصنع شخصيتك، تعلم التعاويذ السحرية، روض الوحوش السحرية، وقرر مصير عالم السحر.",
+    synopsisEn: "Hogwarts Legacy is an immersive, open-world action RPG set in the world first introduced in the Harry Potter books.",
+    cpuMin: "Intel Core i5-6600 (3.3Ghz) or AMD Ryzen 5 1400 (3.2Ghz)",
+    gpuMin: "NVIDIA GeForce GTX 960 4GB or AMD Radeon RX 470 4GB",
+    ramMin: "16 GB",
+    cpuRec: "Intel Core i7-8700 (3.2Ghz) or AMD Ryzen 5 3600 (3.6 Ghz)",
+    gpuRec: "NVIDIA GeForce 1080 Ti or AMD Radeon RX 5700 XT",
+    ramRec: "16 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/990080/Hogwarts_Legacy/",
+    steamAppId: "990080",
+    isSteam: true
+  },
+  {
+    id: "palworld",
+    titleAr: "بال وورلد (Palworld)",
+    titleEn: "Palworld",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2024",
+    rating: "9.3",
+    developer: "Pocketpair",
+    genreAr: "صيد وحوش وبقاء / بوكيمون بالأسلحة",
+    genreEn: "Monster-Catching Survival Crafting",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/header.jpg",
+    badgeTextAr: "ظاهرة عام 2024",
+    badgeTextEn: "Global Sensation",
+    synopsisAr: "اجمع مخلوقات البال الغامضة، وقاتل بها أو استخدمها في بناء القلاع والزراعة والمصانع في عالم مفتوح شاسع مع أصدقائك عبر الإنترنت.",
+    synopsisEn: "Fight, farm, build and work alongside mysterious creatures called Pals in this completely new multiplayer, open worlds survival and crafting game!",
+    cpuMin: "i5-3570K 3.4 GHz 4 Core",
+    gpuMin: "GeForce GTX 1050 (2GB)",
+    ramMin: "16 GB",
+    cpuRec: "i9-9900K 3.6 GHz 8 Core",
+    gpuRec: "GeForce RTX 2070",
+    ramRec: "32 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1623730/Palworld/",
+    steamAppId: "1623730",
+    isSteam: true
+  },
+  {
+    id: "r6siege",
+    titleAr: "رينبو 6 سيج (Rainbow Six Siege)",
+    titleEn: "Tom Clancy's Rainbow Six® Siege",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2015 - 2024",
+    rating: "9.3",
+    developer: "Ubisoft Montreal",
+    genreAr: "اقتحام تكتيكي وتدمير بيئي 5v5",
+    genreEn: "Tactical Multiplayer Shooter",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/header.jpg",
+    badgeTextAr: "أسطورة الشوتر التكتيكي",
+    badgeTextEn: "Tactical Legend",
+    synopsisAr: "قم بالاقتحام أو الدفاع في مواجهات 5 ضد 5 محتدمة تتطلب التعاون العالي واستخدام أدوات التجسس وتدمير الجدران والأرضيات بشكل تكتيكي ذكي.",
+    synopsisEn: "Master the art of destruction and gadgetry in Tom Clancy’s Rainbow Six Siege. Face intense close quarters combat, high lethality, and team strategy.",
+    cpuMin: "Intel Core i3 560 @ 3.3 GHz or AMD Phenom II X4 945 @ 3.0 GHz",
+    gpuMin: "NVIDIA GeForce GTX 460 or AMD Radeon HD 5870",
+    ramMin: "6 GB",
+    cpuRec: "Intel Core i5-2500K @ 3.3 GHz or better",
+    gpuRec: "NVIDIA GeForce GTX 670 or AMD Radeon HD 7970",
+    ramRec: "8 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
+    steamAppId: "359550",
+    isSteam: true
+  },
+  {
+    id: "apexlegends",
+    titleAr: "أبيكس ليجندز (Apex Legends)",
+    titleEn: "Apex Legends",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2020 - 2024",
+    rating: "9.2",
+    developer: "Respawn Entertainment",
+    genreAr: "باتل رويال أبطال سريع وإطلاق نار",
+    genreEn: "Free-to-Play Hero Shooter",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",
+    badgeTextAr: "باتل رويال الخوارق",
+    badgeTextEn: "Hero Shooter Hit",
+    synopsisAr: "تنافس بشخصيات أسطورية تمتلك قدرات خارقة وتكتيكية في لعبة الباتل رويال الثورية والأسرع حركة في عالم الشوتر المجاني.",
+    synopsisEn: "Conquer with character in Apex Legends, a free-to-play Hero shooter where legendary characters battle for glory, fame, and fortune.",
+    cpuMin: "AMD FX 4350 or Equivalent, Intel Core i3 6300 or Equivalent",
+    gpuMin: "AMD Radeon HD 7730, NVIDIA GeForce GT 640",
+    ramMin: "6 GB",
+    cpuRec: "Ryzen 5 CPU or Equivalent, Intel Core i5 3570K or Equivalent",
+    gpuRec: "AMD Radeon R9 290, NVIDIA GeForce GTX 970",
+    ramRec: "8 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/1172470/Apex_Legends/",
+    steamAppId: "1172470",
+    isSteam: true
+  },
+  {
+    id: "dota2",
+    titleAr: "دوتا 2 (Dota 2)",
+    titleEn: "Dota 2",
+    series: "steam",
+    category: ["steam", "competitive"],
+    year: "2013 - 2024",
+    rating: "9.4",
+    developer: "Valve",
+    genreAr: "موبا إلكترونية استراتيجية 5v5",
+    genreEn: "Competitive Action Strategy MOBA",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg",
+    badgeTextAr: "أسطورة الفالف الخالدة",
+    badgeTextEn: "MOBA Titan",
+    synopsisAr: "اللعبة التنافسية الأعمق عالمياً من فالف وبطولة The International. اختر من بين أكثر من 120 بطلاً في معارك استراتيجية 5v5 لا نهائية الاحتمالات.",
+    synopsisEn: "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. There's always a new strategy or tactic to discover.",
+    cpuMin: "Dual core from Intel or AMD at 2.8 GHz",
+    gpuMin: "NVIDIA GeForce 8600/9600GT, ATI/AMD Radeon HD2600/3600",
+    ramMin: "4 GB",
+    cpuRec: "Intel Core i5 or AMD Ryzen 5",
+    gpuRec: "NVIDIA GeForce GTX 1060 / AMD RX 580",
+    ramRec: "8 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/570/Dota_2/",
+    steamAppId: "570",
+    isSteam: true
+  },
+  {
+    id: "eurotruck2",
+    titleAr: "يورو تراك سيميولاتور 2 (Euro Truck 2)",
+    titleEn: "Euro Truck Simulator 2",
+    series: "steam",
+    category: ["steam", "openworld"],
+    year: "2012 - 2024",
+    rating: "9.7",
+    developer: "SCS Software",
+    genreAr: "محاكاة قيادة شاحنات عبر أوروبا",
+    genreEn: "Realistic Driving & Fleet Simulator",
+    image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg",
+    badgeTextAr: "أعظم محاكي قيادة",
+    badgeTextEn: "Top Rated Driving Sim",
+    synopsisAr: "سافر عبر أوروبا كملك الطرقات، انقل البضائع المهمة عبر مسافات شاسعة، واستكشف عشرات المدن في بريطانيا، بلجيكا، ألمانيا، إيطاليا وغيرها.",
+    synopsisEn: "Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances!",
+    cpuMin: "Intel Core i5-6400 or AMD Ryzen 3 1200 or similar",
+    gpuMin: "NVIDIA GeForce GTX 660 or AMD Radeon RX 460",
+    ramMin: "8 GB",
+    cpuRec: "Intel Core i5-9600 or AMD Ryzen 5 3600 or similar",
+    gpuRec: "NVIDIA GeForce GTX 1660 or AMD Radeon RX 590",
+    ramRec: "12 GB",
+    platforms: ["PC", "Steam"],
+    playUrl: "https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/",
+    steamAppId: "227300",
+    isSteam: true
   }
 ];
 
@@ -577,19 +1146,19 @@ const I18N = {
     valBtnPlay: "حمّل والعب فالورانت مجاناً",
     valBtnSpecs: "مواصفات ومتطلبات التشغيل",
     valRosterTitle: "أبرز الوكلاء في التشكيلة",
-    gtaTitle: "Grand Theft Auto 6",
+    gtaTitle: "Grand Theft Auto VI",
     gtaDesc: "استعدوا للحدث الترفيهي الأضخم على الإطلاق. ولاية ليونيدا، قصة لوسيا وجيسون، وعالم مفتوح ينبض بالحياة بأدق التفاصيل والرسوم الجبارة التي تعيد تعريف الجيمنج عالمياً.",
-    cdTitle: "العد التنازلي لإطلاق Grand Theft Auto 6:",
+    cdTitle: "العد التنازلي لإطلاق Grand Theft Auto VI:",
     cdDays: "أيام",
     cdHours: "ساعات",
     cdMins: "دقائق",
     cdSecs: "ثوانٍ",
-    gtaBtn6: "تفاصيل وتوقعات GTA 6",
-    gtaBtn5: "استعراض GTA V & Online",
+    gtaBtn6: "تفاصيل وتوقعات Grand Theft Auto VI",
+    gtaBtn5: "استعراض Grand Theft Auto VI",
     creedTitle: "رحلة عقيدة الحشاشين عبر العصور",
     creedDesc: "سلسلة ألعاب Assassin's Creed الكاملة مرتبة زمنياً وتاريخياً من مصر القديمة واليونان إلى بغداد واليابان الإقطاعية.",
     creedQuote: "لا شيء حقيقي.. كل شيء مباح",
-    rigTitle: "مواصفات جهازي - Al Khashab Gaming Rig",
+    rigTitle: "مواصفات جهاز Al Khashab",
     rigDesc: "المواصفات والعتاد الاحترافي لتجميعة الألعاب والبث الخاصة بي لتشغيل أقوى ألعاب الجيل بأعلى إطارات وأفضل أداء.",
     commTitle: "انضم إلى مجتمع عشيرة الذئاب",
     commDesc: "تواصل مع Al Khashab وباقي اللاعبين، شارك في البطولات والسطوات، وتابع البثوث المباشرة يومياً.",
@@ -645,19 +1214,19 @@ const I18N = {
     valBtnPlay: "Download & Play Free",
     valBtnSpecs: "System Specs & Requirements",
     valRosterTitle: "Meta Agent Roster",
-    gtaTitle: "Grand Theft Auto 6",
+    gtaTitle: "Grand Theft Auto VI",
     gtaDesc: "Get ready for the most monumental entertainment release in history. Leonida, Lucia & Jason's saga, and Vice City's neon glory reinvent open-world gaming.",
-    cdTitle: "Live Countdown to Grand Theft Auto 6:",
+    cdTitle: "Live Countdown to Grand Theft Auto VI:",
     cdDays: "Days",
     cdHours: "Hours",
     cdMins: "Mins",
     cdSecs: "Secs",
-    gtaBtn6: "GTA 6 Highlights",
-    gtaBtn5: "Explore GTA V & Online",
+    gtaBtn6: "Grand Theft Auto VI Highlights",
+    gtaBtn5: "Explore Grand Theft Auto VI",
     creedTitle: "The Complete Creed Historical Saga",
     creedDesc: "The entire Assassin's Creed series chronologically cataloged from Ancient Egypt to Feudal Japan.",
     creedQuote: "Nothing is true, everything is permitted",
-    rigTitle: "My PC Specs - Al Khashab Gaming Rig",
+    rigTitle: "Al Khashab PC Specs",
     rigDesc: "Professional gaming battlestation and streaming rig specs built for peak performance, ultra-high framerates, and elite gameplay.",
     commTitle: "Join the Wolf Clan Community",
     commDesc: "Connect with Al Khashab and community members, participate in tournaments, heists, and live streams.",
@@ -769,10 +1338,120 @@ const Favs = {
 };
 
 // ==========================================
-// 5. RENDERING GAME CARDS & FILTERING
+// 5. RENDERING GAME CARDS & FILTERING (WITH LIVE STEAM STORE INTEGRATION)
 // ==========================================
 let currentFilter = "all";
 let searchQuery = "";
+let liveSteamGames = [];
+let featuredSteamGames = [];
+let isSteamFetching = false;
+
+async function fetchLiveSteamFeatured() {
+  try {
+    let res;
+    try {
+      res = await fetch("/api/steam/featured");
+      if (!res.ok) throw new Error("Local featured API failed");
+    } catch (localErr) {
+      res = await fetch("https://conf-conventional-pole-referral.trycloudflare.com/api/steam/featured");
+    }
+    const data = await res.json();
+    if (data && data.items && data.items.length > 0) {
+      featuredSteamGames = data.items.map(item => ({
+        id: `steam_feat_${item.id}`,
+        steamAppId: item.id,
+        isSteam: true,
+        isLiveSteam: true,
+        titleAr: item.name,
+        titleEn: item.name,
+        series: "steam",
+        category: ["steam", "openworld"],
+        year: item.price || "Steam",
+        rating: "9.6",
+        developer: "Steam Top Seller",
+        genreAr: item.price ? `متجر ستيم | ${item.price}` : "متجر ستيم الرسمي",
+        genreEn: item.price ? `Steam Store | ${item.price}` : "Official Steam Store",
+        image: item.image,
+        badgeTextAr: "الأكثر مبيعاً على Steam",
+        badgeTextEn: "Steam Top Seller",
+        synopsisAr: `لعبة ${item.name} من الألعاب الأكثر مبيعاً والأعلى لعباً على منصة Steam العالمية الآن. متاحة بكامل المواصفات والتشغيل الفوري.`,
+        synopsisEn: `${item.name} is one of the top trending games on Steam right now. Available with full specs and instant launch.`,
+        cpuMin: "راجع متطلبات صفحة Steam الرسمية",
+        gpuMin: "DirectX 11 / 12 متوافق",
+        ramMin: "8 GB",
+        cpuRec: "معالج ألعاب سداسي النواة حديث",
+        gpuRec: "NVIDIA GeForce RTX / AMD Radeon RX",
+        ramRec: "16 GB",
+        platforms: ["PC", "Steam"],
+        playUrl: item.steamUrl,
+        steamLaunchUrl: item.steamLaunchUrl
+      }));
+      renderGames();
+    }
+  } catch (err) {
+    console.warn("Featured Steam games note:", err);
+  }
+}
+
+async function fetchLiveSteamSearch(query) {
+  if (!query || query.trim().length < 2) {
+    liveSteamGames = [];
+    isSteamFetching = false;
+    renderGames();
+    return;
+  }
+
+  isSteamFetching = true;
+  try {
+    let res;
+    try {
+      res = await fetch(`/api/steam/search?term=${encodeURIComponent(query)}`);
+      if (!res.ok) throw new Error("Local API failed");
+    } catch (localErr) {
+      // Fallback to Cloudflare Tunnel endpoint for static hosting like GitHub Pages
+      res = await fetch(`https://conf-conventional-pole-referral.trycloudflare.com/api/steam/search?term=${encodeURIComponent(query)}`);
+    }
+    const data = await res.json();
+    if (data && data.items && data.items.length > 0) {
+      liveSteamGames = data.items.map(item => ({
+        id: `steam_${item.id}`,
+        steamAppId: item.id,
+        isSteam: true,
+        isLiveSteam: true,
+        titleAr: item.name,
+        titleEn: item.name,
+        series: "steam",
+        category: ["steam", "openworld"],
+        year: item.price || "Steam",
+        rating: item.metascore || "9.5",
+        developer: "Steam Store",
+        genreAr: item.price ? `متجر ستيم | ${item.price}` : "متجر ستيم الرسمي",
+        genreEn: item.price ? `Steam Store | ${item.price}` : "Official Steam Store",
+        image: item.image,
+        badgeTextAr: "متجر Steam الحي",
+        badgeTextEn: "Live Steam Game",
+        synopsisAr: `لعبة ${item.name} متاحة الآن عبر متجر Steam الرسمي. اضغط لعرض التفاصيل الكاملة، متطلبات التشغيل، والتشغيل الفوري.`,
+        synopsisEn: `${item.name} available live on Steam Store. Click for full system specs, store overview, and instant launch.`,
+        cpuMin: "راجع متطلبات صفحة Steam الرسمية",
+        gpuMin: "DirectX 11 / 12 متوافق",
+        ramMin: "8 GB",
+        cpuRec: "معالج ألعاب سداسي النواة حديث",
+        gpuRec: "NVIDIA GeForce RTX / AMD Radeon RX",
+        ramRec: "16 GB",
+        platforms: ["PC", "Steam"],
+        playUrl: item.steamUrl,
+        steamLaunchUrl: item.steamLaunchUrl
+      }));
+    } else {
+      liveSteamGames = [];
+    }
+  } catch (err) {
+    console.warn("Live Steam Search fallback:", err);
+  } finally {
+    isSteamFetching = false;
+    renderGames();
+  }
+}
 
 function renderGames() {
   const grid = document.getElementById("gamesGrid");
@@ -782,7 +1461,29 @@ function renderGames() {
   const t = I18N[currentLang];
   const isEn = currentLang === "en";
 
-  const filtered = GAMES_DATA.filter(g => {
+  // Merge static database with live Steam featured games and search results
+  let combinedList = [...GAMES_DATA];
+
+  if (featuredSteamGames.length > 0) {
+    const existingIds = new Set(combinedList.map(g => String(g.steamAppId || g.id)));
+    const uniqueFeatured = featuredSteamGames.filter(fg => !existingIds.has(String(fg.steamAppId)));
+    combinedList = [...combinedList, ...uniqueFeatured];
+  }
+
+  if (searchQuery.trim().length >= 2 && liveSteamGames.length > 0) {
+    const existingIds = new Set(combinedList.map(g => String(g.steamAppId || g.id)));
+    const uniqueLiveSteam = liveSteamGames.filter(sg => !existingIds.has(String(sg.steamAppId)));
+    combinedList = [...combinedList, ...uniqueLiveSteam];
+  }
+
+  // Update Steam count badge dynamically
+  const steamBadge = document.getElementById("steamCountBadge");
+  if (steamBadge) {
+    const steamCount = combinedList.filter(g => g.series === "steam" || (g.category && g.category.includes("steam"))).length;
+    steamBadge.textContent = `${steamCount} Live`;
+  }
+
+  const filtered = combinedList.filter(g => {
     const matchesFilter = (currentFilter === "all") ||
       (currentFilter === "favorites" ? Favs.has(g.id) : (g.series === currentFilter || g.category.includes(currentFilter)));
 
@@ -821,16 +1522,20 @@ function renderGames() {
       if (p === "PC") return '<i class="fa-brands fa-windows" title="PC Windows"></i>';
       if (p.includes("PS")) return '<i class="fa-brands fa-playstation" title="PlayStation"></i>';
       if (p.includes("Xbox")) return '<i class="fa-brands fa-xbox" title="Xbox"></i>';
+      if (p === "Steam") return '<i class="fa-brands fa-steam" title="Steam"></i>';
       return '';
     }).join(' ');
 
     const favTooltip = isFav ? (isEn ? "Remove from Favorites" : "إزالة من المفضلة") : (isEn ? "Add to Favorites" : "إضافة إلى المفضلة");
     const arrowIcon = isEn ? "fa-arrow-right" : "fa-arrow-left";
+    const steamBadge = (game.isSteam || game.category.includes('steam'))
+      ? `<span class="card-steam-badge"><i class="fa-brands fa-steam"></i> Steam</span>`
+      : '';
 
     return `
       <article class="game-card" data-id="${game.id}">
         <div class="card-media">
-          <img src="${game.image}" alt="${title}" class="card-thumb" loading="lazy">
+          <img src="${game.image}" alt="${title}" class="card-thumb" loading="lazy" onerror="this.src='assets/hero.jpg'">
           <div class="card-gradient-overlay"></div>
           
           <div class="card-badges-top">
@@ -839,6 +1544,8 @@ function renderGames() {
             </span>
             <span class="card-badge-series">${badge}</span>
           </div>
+
+          ${steamBadge}
 
           <button class="card-fav-btn ${isFav ? 'active' : ''}" 
                   data-fav-id="${game.id}" 
@@ -956,6 +1663,21 @@ function openGameModal(gameId) {
   const playBtn = document.getElementById("modalPlayBtn");
   if (playBtn) {
     playBtn.href = game.playUrl || "#";
+    if (game.isSteam || game.category.includes('steam')) {
+      playBtn.innerHTML = `<i class="fa-brands fa-steam"></i> <span>${isEn ? "Open in Steam Store" : "فتح في متجر Steam"}</span>`;
+    } else {
+      playBtn.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> <span>${t.modalLaunchBtn}</span>`;
+    }
+  }
+
+  const steamLaunchBtn = document.getElementById("modalSteamLaunchBtn");
+  if (steamLaunchBtn) {
+    if (game.steamAppId || game.steamLaunchUrl) {
+      steamLaunchBtn.style.display = "inline-flex";
+      steamLaunchBtn.href = game.steamLaunchUrl || `steam://run/${game.steamAppId}`;
+    } else {
+      steamLaunchBtn.style.display = "none";
+    }
   }
 
   const tagsEl = document.getElementById("modalTags");
@@ -1140,6 +1862,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startGtaCountdown();
 
+  // Load featured Steam store games into library
+  fetchLiveSteamFeatured();
+
   // Language toggle button listener
   const langToggleBtn = document.getElementById("langToggle");
   if (langToggleBtn) {
@@ -1162,16 +1887,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Search input with debounce
+  window.selectSteamFilter = function() {
+    const steamBtn = document.querySelector('.filter-tab-btn[data-filter="steam"]');
+    if (steamBtn) {
+      steamBtn.click();
+    } else {
+      currentFilter = "steam";
+      renderGames();
+    }
+    const gamesEl = document.getElementById("games");
+    if (gamesEl) gamesEl.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Search input with debounce and live Steam search integration
   const searchInput = document.getElementById("gameSearchInput");
   if (searchInput) {
     let debounceTimer;
+    let steamDebounceTimer;
     searchInput.addEventListener("input", (e) => {
       clearTimeout(debounceTimer);
+      clearTimeout(steamDebounceTimer);
+      const val = e.target.value;
       debounceTimer = setTimeout(() => {
-        searchQuery = e.target.value;
+        searchQuery = val;
         renderGames();
-      }, 180);
+      }, 120);
+
+      // Trigger live Steam search across millions of games if 2+ letters
+      steamDebounceTimer = setTimeout(() => {
+        if (val.trim().length >= 2) {
+          fetchLiveSteamSearch(val);
+        } else {
+          liveSteamGames = [];
+          renderGames();
+        }
+      }, 400);
     });
   }
 
