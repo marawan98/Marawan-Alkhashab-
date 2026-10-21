@@ -247,6 +247,84 @@ app.get('/api/discord/guild', async (req, res) => {
   });
 });
 
+// ==========================================
+// 2.5 STEAM WEB STORE & SEARCH API PROXY
+// ==========================================
+app.get('/api/steam/search', async (req, res) => {
+  const query = req.query.term || req.query.q || '';
+  if (!query.trim()) {
+    return res.json({ total: 0, items: [] });
+  }
+
+  try {
+    const steamSearchUrl = `https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(query)}&l=arabic&cc=us`;
+    const response = await axios.get(steamSearchUrl, { timeout: 6000 });
+    
+    // Map items to clean format
+    const items = (response.data.items || []).map(item => {
+      const priceText = item.price 
+        ? (item.price.final === 0 ? 'مجانية (Free)' : `$${(item.price.final / 100).toFixed(2)}`)
+        : 'مجانية / تفقد المتجر';
+
+      return {
+        id: item.id,
+        appId: item.id,
+        name: item.name,
+        price: priceText,
+        discount: item.price ? (item.price.discount_percent || 0) : 0,
+        tinyImage: item.tiny_image,
+        image: `https://cdn.cloudflare.steamstatic.com/steam/apps/${item.id}/header.jpg`,
+        metascore: item.metascore || null,
+        platforms: item.platforms || { windows: true },
+        steamUrl: `https://store.steampowered.com/app/${item.id}`,
+        steamLaunchUrl: `steam://run/${item.id}`
+      };
+    });
+
+    return res.json({ total: items.length, items });
+  } catch (err) {
+    console.error('Steam Search API Error:', err.message);
+    return res.status(500).json({ error: 'Failed to search Steam', message: err.message });
+  }
+});
+
+app.get('/api/steam/app/:appId', async (req, res) => {
+  const { appId } = req.params;
+  try {
+    const detailUrl = `https://store.steampowered.com/api/appdetails?appids=${appId}&l=arabic`;
+    const response = await axios.get(detailUrl, { timeout: 6000 });
+    const appData = response.data[appId];
+
+    if (!appData || !appData.success) {
+      return res.status(404).json({ error: 'Game details not found on Steam' });
+    }
+
+    const data = appData.data;
+    return res.json({
+      id: data.steam_appid,
+      appId: data.steam_appid,
+      name: data.name,
+      description: data.short_description || data.detailed_description,
+      aboutTheGame: data.about_the_game,
+      image: data.header_image,
+      screenshots: (data.screenshots || []).slice(0, 6).map(s => s.path_full),
+      developers: data.developers || [],
+      publishers: data.publishers || [],
+      releaseDate: data.release_date?.date || 'قريباً',
+      pcRequirements: data.pc_requirements || {},
+      genres: (data.genres || []).map(g => g.description),
+      metacritic: data.metacritic?.score,
+      isFree: data.is_free,
+      price: data.price_overview?.final_formatted || (data.is_free ? 'مجانية (Free)' : 'راجع المتجر'),
+      steamUrl: `https://store.steampowered.com/app/${data.steam_appid}`,
+      steamLaunchUrl: `steam://run/${data.steam_appid}`
+    });
+  } catch (err) {
+    console.error('Steam App Details Error:', err.message);
+    return res.status(500).json({ error: 'Failed to get app details', message: err.message });
+  }
+});
+
 // Broadcast Announcement Endpoint (Protected)
 app.post('/api/discord/broadcast', async (req, res) => {
   if (!req.session?.user?.isAdmin) {

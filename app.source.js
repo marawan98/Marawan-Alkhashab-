@@ -38,7 +38,7 @@ const GAMES_DATA = [
   {
     id: "gta6",
     titleAr: "جراند ثفت أوتو 6",
-    titleEn: "Grand Theft Auto VI",
+    titleEn: "Grand Theft Auto 6",
     series: "gta",
     category: ["gta", "openworld"],
     year: "2025/2026",
@@ -568,6 +568,7 @@ const I18N = {
     tabGta: "سلسلة GTA",
     tabAc: "سلسلة Assassin's Creed الكاملة",
     tabOpen: "عالم مفتوح",
+    tabSteam: "ألعاب Steam",
     tabComp: "ألعاب تنافسية",
     tabFavs: "ألعابي المفضلة",
     cardDetailsBtn: "تفاصيل اللعبة",
@@ -576,20 +577,20 @@ const I18N = {
     valBtnPlay: "حمّل والعب فالورانت مجاناً",
     valBtnSpecs: "مواصفات ومتطلبات التشغيل",
     valRosterTitle: "أبرز الوكلاء في التشكيلة",
-    gtaTitle: "Grand Theft Auto VI",
+    gtaTitle: "Grand Theft Auto 6",
     gtaDesc: "استعدوا للحدث الترفيهي الأضخم على الإطلاق. ولاية ليونيدا، قصة لوسيا وجيسون، وعالم مفتوح ينبض بالحياة بأدق التفاصيل والرسوم الجبارة التي تعيد تعريف الجيمنج عالمياً.",
-    cdTitle: "العد التنازلي لإطلاق Grand Theft Auto VI:",
+    cdTitle: "العد التنازلي لإطلاق Grand Theft Auto 6:",
     cdDays: "أيام",
     cdHours: "ساعات",
     cdMins: "دقائق",
     cdSecs: "ثوانٍ",
-    gtaBtn6: "تفاصيل وتوقعات GTA VI",
+    gtaBtn6: "تفاصيل وتوقعات GTA 6",
     gtaBtn5: "استعراض GTA V & Online",
     creedTitle: "رحلة عقيدة الحشاشين عبر العصور",
     creedDesc: "سلسلة ألعاب Assassin's Creed الكاملة مرتبة زمنياً وتاريخياً من مصر القديمة واليونان إلى بغداد واليابان الإقطاعية.",
     creedQuote: "لا شيء حقيقي.. كل شيء مباح",
-    rigTitle: "أقوى جهاز ألعاب في العالم - Al Khashab God-Tier Rig",
-    rigDesc: "وحش الأداء الخارق بلا منازع - تجميعة الأحلام الأقوى عالمياً لكسر أرقام قياسية في الأداء بدقة 8K ومعدل إطارات يتجاوز 240FPS مع تبريد مائي مخصص وإضاءة نيون بنفسجية متزامنة.",
+    rigTitle: "مواصفات جهازي - Al Khashab Gaming Rig",
+    rigDesc: "المواصفات والعتاد الاحترافي لتجميعة الألعاب والبث الخاصة بي لتشغيل أقوى ألعاب الجيل بأعلى إطارات وأفضل أداء.",
     commTitle: "انضم إلى مجتمع عشيرة الذئاب",
     commDesc: "تواصل مع Al Khashab وباقي اللاعبين، شارك في البطولات والسطوات، وتابع البثوث المباشرة يومياً.",
     commDiscordBtn: "انضم لسيرفر الديسكورد (اضغط هنا)",
@@ -635,6 +636,7 @@ const I18N = {
     tabGta: "GTA Series",
     tabAc: "Assassin's Creed Full Saga",
     tabOpen: "Open World",
+    tabSteam: "Steam Games",
     tabComp: "Competitive",
     tabFavs: "My Favorites",
     cardDetailsBtn: "View Details",
@@ -643,20 +645,20 @@ const I18N = {
     valBtnPlay: "Download & Play Free",
     valBtnSpecs: "System Specs & Requirements",
     valRosterTitle: "Meta Agent Roster",
-    gtaTitle: "Grand Theft Auto VI",
+    gtaTitle: "Grand Theft Auto 6",
     gtaDesc: "Get ready for the most monumental entertainment release in history. Leonida, Lucia & Jason's saga, and Vice City's neon glory reinvent open-world gaming.",
-    cdTitle: "Live Countdown to Grand Theft Auto VI:",
+    cdTitle: "Live Countdown to Grand Theft Auto 6:",
     cdDays: "Days",
     cdHours: "Hours",
     cdMins: "Mins",
     cdSecs: "Secs",
-    gtaBtn6: "GTA VI Highlights",
+    gtaBtn6: "GTA 6 Highlights",
     gtaBtn5: "Explore GTA V & Online",
     creedTitle: "The Complete Creed Historical Saga",
     creedDesc: "The entire Assassin's Creed series chronologically cataloged from Ancient Egypt to Feudal Japan.",
     creedQuote: "Nothing is true, everything is permitted",
-    rigTitle: "World's Most Powerful Battlestation - Al Khashab God-Tier Rig",
-    rigDesc: "The undisputed performance monster - world-record breaking specs powering 8K gaming at 200+ FPS with custom hard-tube liquid cooling and synchronized cyber purple lighting.",
+    rigTitle: "My PC Specs - Al Khashab Gaming Rig",
+    rigDesc: "Professional gaming battlestation and streaming rig specs built for peak performance, ultra-high framerates, and elite gameplay.",
     commTitle: "Join the Wolf Clan Community",
     commDesc: "Connect with Al Khashab and community members, participate in tournaments, heists, and live streams.",
     commDiscordBtn: "Join Official Discord (Click Here)",
@@ -1026,10 +1028,17 @@ function setLanguage(lang) {
 }
 
 // ==========================================
-// 9. GTA VI COUNTDOWN TIMER
+// 9. GTA 6 COUNTDOWN TIMER
 // ==========================================
 function startGtaCountdown() {
-  const targetDate = new Date("2026-10-25T00:00:00").getTime();
+  // Official Rockstar release window: Fall season (November 17)
+  const currentDate = new Date();
+  let releaseYear = currentDate.getFullYear();
+  let target = new Date(`${releaseYear}-11-17T00:00:00`);
+  if (target.getTime() - currentDate.getTime() < 1000 * 60 * 60 * 24 * 45) {
+    target = new Date(`${releaseYear + 1}-11-17T00:00:00`);
+  }
+  const targetDate = target.getTime();
 
   function update() {
     const now = new Date().getTime();
