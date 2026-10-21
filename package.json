@@ -1,0 +1,19 @@
+{
+  "name": "alkhashab-gaming",
+  "version": "1.0.0",
+  "description": "Al Khashab Official Gaming Hub",
+  "scripts": {
+    "start": "node server.js",
+    "protect": "node obfuscate.js",
+    "obfuscate": "node obfuscate.js"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^5.9.0"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0"
+  }
+}

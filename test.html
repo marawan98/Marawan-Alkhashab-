@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Khashab | البوابة الاحترافية للألعاب - AL KHASHAB GAMING</title>
+  <meta name="description" content="البوابة الرسمية لألعاب Al Khashab - استكشف مكتبة ألعاب فالورانت، سلسلة GTA كاملة، وملحمة أساسنز كريد التاريخية بأحدث المواصفات وتفاصيل الجيمنج.">
+  <meta name="theme-color" content="#7c3aed">
+
+  <!-- Google Fonts: Cairo (Arabic) & Orbitron (Cyberpunk/Gaming) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Al Khashab Cyber Shield Protection -->
+  <script src="security.min.js"></script>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+  <!-- Ambient Particles Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav-brand">
+        <div class="brand-wolf-icon">
+          <!-- Stylized Neon Wolf Icon matching the user's wall neon -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L9.5 7L4 8L7.5 12.5L6.5 18L12 15.5L17.5 18L16.5 12.5L20 8L14.5 7L12 2Z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-title-ar">Al Khashab</span>
+          <span class="brand-title-en">GAMING PORTAL</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> <span data-i18n="navHome">الرئيسية</span></a></li>
+        <li><a href="#games" class="nav-link"><i class="fa-solid fa-gamepad"></i> <span data-i18n="navGames">مكتبة الألعاب</span></a></li>
+        <li><a href="#valorant-hub" class="nav-link"><i class="fa-solid fa-crosshairs"></i> <span data-i18n="navVal">فالورانت</span></a></li>
+        <li><a href="#gta-universe" class="nav-link"><i class="fa-solid fa-car-side"></i> <span data-i18n="navGta">عالم GTA</span></a></li>
+        <li><a href="#creed-saga" class="nav-link"><i class="fa-solid fa-khanda"></i> <span data-i18n="navAc">أساسنز كريد</span></a></li>
+        <li><a href="#battle-station" class="nav-link"><i class="fa-solid fa-desktop"></i> <span data-i18n="navRig">السيت أب</span></a></li>
+        <li><a href="#community" class="nav-link"><i class="fa-solid fa-users"></i> <span data-i18n="navComm">المجتمع</span></a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Language Switcher Button -->
+        <button class="lang-toggle-btn" id="langToggle" title="تغيير اللغة / Switch Language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langLabel">EN</span>
+        </button>
+
+        <!-- Admin Portal Link -->
+        <a href="admin.html" class="nav-admin-btn" title="لوحة الإدارة / Admin Portal">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span data-i18n="navAdmin">لوحة الإدارة</span>
+        </a>
+
+        <!-- Audio FX Toggle -->
+        <button class="audio-toggle-btn" id="audioToggle" title="تفعيل / كتم المؤثرات الصوتية">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Discord CTA -->
+        <a href="https://discord.gg/3eEY8WjjnR" target="_blank" rel="noopener" class="nav-cta-btn">
+          <i class="fa-brands fa-discord"></i>
+          <span data-i18n="navDiscord">انضم للديسكورد</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION (WELCOME BANNER WITH MARAWAN'S PHOTO)
+       ========================================================================== -->
+  <header class="hero-section" id="hero">
+    <!-- Ambient Glow Blobs -->
+    <div class="hero-glow-blob hero-glow-blob-1"></div>
+    <div class="hero-glow-blob hero-glow-blob-2"></div>
+
+    <div class="container hero-grid">
+      
+      <!-- Right Column: Welcome Text & Brand Details -->
+      <div class="hero-content">
+        
+        <div class="hero-badge-wrap">
+          <div class="hero-badge">
+            <span class="live-dot"></span>
+            <span data-i18n="heroBadge1">بوابة الجيمنج الاحترافية الرسمية</span>
+          </div>
+          <a href="https://www.tiktok.com/@marawan_alkhashab?" target="_blank" rel="noopener" class="hero-badge-tiktok" style="text-decoration: none;">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>TikTok: @marawan_alkhashab</span>
+          </a>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-i18n="heroTitlePrefix">مَرْحَباً بِكُمْ فِي مَمْلَكَة</span>
+          <span class="gradient-text">AL KHASHAB</span>
+          <span data-i18n="heroTitleSuffix">لِلجِيمِنْج</span>
+          <span class="en-sub">AL KHASHAB GAMING REALM</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="heroDesc">
+          وجهتكم الأولى لأقوى تجارب الألعاب التنافسية والعوالم المفتوحة. هنا ستجدون مكتبة شاملة تغطي تكتيكات فالورانت، ملحمة أسرار وعوالم GTA و Vice City، والرحلة الكاملة لجميع أجزاء Assassin's Creed التاريخية، مع استعراض أقوى عتاد الجيمنج.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#games" class="btn-primary">
+            <i class="fa-solid fa-play"></i>
+            <span data-i18n="heroBtnExplore">استكشف مكتبة الألعاب</span>
+          </a>
+          <a href="#battle-station" class="btn-secondary">
+            <i class="fa-solid fa-microchip"></i>
+            <span data-i18n="heroBtnRig">مواصفات جهاز Al Khashab</span>
+          </a>
+          <a href="https://discord.gg/3eEY8WjjnR" target="_blank" rel="noopener" class="btn-secondary" style="border-color: #5865f2; color: #8ea1e1;">
+            <i class="fa-brands fa-discord"></i>
+            <span data-i18n="heroBtnDiscord">سيرفر الديسكورد</span>
+          </a>
+        </div>
+
+        <!-- Hero Stats Bar -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" id="statGames">20+</span>
+            <span class="stat-label" data-i18n="statGamesLabel">لعبة أسطورية</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4K</span>
+            <span class="stat-label">240Hz Battle Rig</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">WOLF</span>
+            <span class="stat-label">Clan Community</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Gamer Spirit</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left Column: Marawan's Custom Gaming Rig & Setup Photo -->
+      <div class="hero-media-wrap">
+        <div class="hero-frame-container">
+          
+          <!-- Cyber HUD Corners -->
+          <div class="hud-corner hud-top-left"></div>
+          <div class="hud-corner hud-top-right"></div>
+          <div class="hud-corner hud-bottom-left"></div>
+          <div class="hud-corner hud-bottom-right"></div>
+
+          <!-- Floating Badges Over Photo -->
+          <div class="photo-floating-card badge-top-left">
+            <div class="badge-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="badge-info">
+              <h4>AL KHASHAB</h4>
+              <p>PRO GAMING REALM</p>
+            </div>
+          </div>
+
+          <div class="photo-floating-card badge-bottom-right">
+            <div class="badge-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.2);">
+              <i class="fa-solid fa-tower-broadcast"></i>
+            </div>
+            <div class="badge-info">
+              <h4>BATTLE STATION</h4>
+              <p>RGB PURPLE SYNC</p>
+            </div>
+          </div>
+
+          <!-- Main Uploaded Image -->
+          <div class="hero-image-inner">
+            <img src="assets/hero.jpg" alt="مروان الخشاب في سيت أب الجيمنج الاحترافي" class="hero-main-photo">
+            <div class="hero-image-overlay"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       GAMES EXPLORER & LIBRARY SECTION
+       ========================================================================== -->
+  <section class="games-explorer-section" id="games">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-layer-group"></i> <span data-i18n="gamesSectionTag">GAME VAULT</span></span>
+        <h2 class="section-title"><span data-i18n="gamesSectionTitle">مكتبة الألعاب الاحترافية</span></h2>
+        <p class="section-desc" data-i18n="gamesSectionDesc">
+          تصفح قائمة الألعاب المتاحة وتعرف على أحدث المواصفات، القصص، ومتطلبات التشغيل لكل لعبة.
+        </p>
+      </div>
+
+      <!-- Search & Filters Container -->
+      <div class="filter-controls-wrap">
+        
+        <!-- Search bar & Count -->
+        <div class="search-and-stats">
+          <div class="search-box-wrap">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="gameSearchInput" class="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث عن لعبة (مثال: فالورانت، GTA، فالهالا، إزيو...)...">
+          </div>
+          <div class="filter-stats-text">
+            <span data-i18n="displayingPrefix">يتم عرض</span> <span id="gamesCount">0</span> <span data-i18n="displayingSuffix">لعبة مختارة</span>
+          </div>
+        </div>
+
+        <!-- Filter Pills Tabs -->
+        <ul class="filter-tabs" id="filterTabs">
+          <li>
+            <button class="filter-tab-btn active" data-filter="all">
+              <i class="fa-solid fa-border-all"></i>
+              <span data-i18n="tabAll">جميع الألعاب</span>
+              <span class="filter-tab-badge">20</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="valorant">
+              <i class="fa-solid fa-crosshairs"></i>
+              <span data-i18n="tabVal">فالورانت</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="gta">
+              <i class="fa-solid fa-car"></i>
+              <span data-i18n="tabGta">سلسلة GTA</span>
+              <span class="filter-tab-badge">5</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="assassins">
+              <i class="fa-solid fa-khanda"></i>
+              <span data-i18n="tabAc">سلسلة Assassin's Creed الكاملة</span>
+              <span class="filter-tab-badge">14</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="openworld">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span data-i18n="tabOpen">عالم مفتوح</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="competitive">
+              <i class="fa-solid fa-trophy"></i>
+              <span data-i18n="tabComp">ألعاب تنافسية</span>
+            </button>
+          </li>
+          <li>
+            <button class="filter-tab-btn" data-filter="favorites">
+              <i class="fa-solid fa-heart" style="color: var(--magenta-neon);"></i>
+              <span data-i18n="tabFavs">ألعابي المفضلة</span>
+            </button>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Dynamic Games Grid (Populated by app.js) -->
+      <div class="games-grid" id="gamesGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VALORANT TACTICAL CENTER SHOWCASE
+       ========================================================================== -->
+  <section class="valorant-showcase-section" id="valorant-hub">
+    <div class="container">
+      
+      <div class="valorant-banner-card">
+        <!-- Background Art -->
+        <img src="assets/games/valorant.jpg" alt="Valorant Art" class="val-bg-art">
+
+        <div class="val-content-grid">
+          
+          <!-- Left Content -->
+          <div>
+            <span class="val-badge-riot"><i class="fa-solid fa-shield-halved"></i> RIOT GAMES TACTICAL FPS</span>
+            <h2 class="val-title">مركز تكتيكات <span style="color: #ff4655;">فالورانت</span> الاحترافي</h2>
+            <p class="val-desc">
+              الدقة في التصويب ليست سوى البداية. في عالم فالورانت، كل جولة تتطلب تخطيطاً محكماً وتفكيراً استراتيجياً واستخداماً عبقرياً لقدرات الوكلاء لتحقيق الفوز وصعود سلم الرانك إلى الراديانت.
+            </p>
+
+            <div class="val-features-list">
+              <div class="val-feat-item">
+                <div class="val-feat-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="val-feat-text">
+                  <h5>دقة التصويب والـ Crosshair</h5>
+                  <p>تثبيت الإيم وإتقان ضربات الـ One-Tap بسلاح الفاندال</p>
+                </div>
+              </div>
+
+              <div class="val-feat-item">
+                <div class="val-feat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="val-feat-text">
+                  <h5>لاين أب وتكتيكات الخرائط</h5>
+                  <p>أفضل إلقاءات السموكات والأسهم لفتح المواقع وتأمين السبايك</p>
+                </div>
+              </div>
+
+              <div class="val-feat-item">
+                <div class="val-feat-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="val-feat-text">
+                  <h5>تكامل أدوار الفريق</h5>
+                  <p>Duelist, Initiator, Controller, Sentinel بتناغم مثالي</p>
+                </div>
+              </div>
+
+              <div class="val-feat-item">
+                <div class="val-feat-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="val-feat-text">
+                  <h5>صعود الرانك إلى Radiant</h5>
+                  <p>دليل إدارة الاقتصاد وكيفية الـ Clutch في الجولات الحاسمة</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="https://playvalorant.com" target="_blank" rel="noopener" class="btn-valorant">
+                <i class="fa-solid fa-download"></i>
+                <span>حمّل والعب فالورانت مجاناً</span>
+              </a>
+              <button class="btn-secondary" onclick="openGameModal('valorant')">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>مواصفات ومتطلبات التشغيل</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Featured Agents Spotlight -->
+          <div class="val-agents-card">
+            <div class="agents-header">
+              <h4>أبرز الوكلاء في التشكيلة</h4>
+              <span class="gaming-font neon-purple-text" style="font-size: 0.85rem;">META AGENTS</span>
+            </div>
+
+            <div class="agent-roster-grid">
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">J</div>
+                <div class="agent-details">
+                  <h5>JETT</h5>
+                  <span>Duelist • سرعة البرق</span>
+                </div>
+              </div>
+
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #ec4899, #a855f7);">R</div>
+                <div class="agent-details">
+                  <h5>REYNA</h5>
+                  <span>Duelist • التهام الأرواح</span>
+                </div>
+              </div>
+
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #7c3aed, #1e1b4b);">O</div>
+                <div class="agent-details">
+                  <h5>OMEN</h5>
+                  <span>Controller • ظلال الانتقال</span>
+                </div>
+              </div>
+
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">K</div>
+                <div class="agent-details">
+                  <h5>KILLJOY</h5>
+                  <span>Sentinel • دفاع التكنولوجيا</span>
+                </div>
+              </div>
+
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #10b981, #065f46);">V</div>
+                <div class="agent-details">
+                  <h5>VIPER</h5>
+                  <span>Controller • سموم التعتيم</span>
+                </div>
+              </div>
+
+              <div class="agent-mini-card">
+                <div class="agent-avatar" style="background: linear-gradient(135deg, #38bdf8, #1d4ed8);">S</div>
+                <div class="agent-details">
+                  <h5>SOVA</h5>
+                  <span>Initiator • كاشف الأسرار</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GTA UNIVERSE & GTA VI COUNTDOWN
+       ========================================================================== -->
+  <section class="gta-showcase-section" id="gta-universe">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag" style="border-color: var(--magenta-neon); color: #f472b6;">
+          <i class="fa-solid fa-car-side"></i> ROCKSTAR GAMES UNIVERSE
+        </span>
+        <h2 class="section-title">عالم <span class="gradient-text">Grand Theft Auto</span> والترقب الأكبر</h2>
+        <p class="section-desc">
+          من شوارع لوس سانتوس في GTA V إلى العودة التاريخية لشواطئ وأنوار نيون فايس سيتي في GTA VI.
+        </p>
+      </div>
+
+      <!-- GTA VI Spotlight Banner with Live Countdown -->
+      <div class="gta-vi-hero-banner">
+        <div class="gta6-bg-glow"></div>
+
+        <div>
+          <span class="gta6-badge"><i class="fa-solid fa-fire"></i> THE NEXT CHAPTER • VICE CITY</span>
+          <h2 class="gta6-title">Grand Theft Auto <span style="color: #f472b6;">VI</span></h2>
+          <p class="gta6-desc">
+            استعدوا للحدث الترفيهي الأضخم على الإطلاق. ولاية ليونيدا، قصة لوسيا وجيسون، وعالم مفتوح ينبض بالحياة بأدق التفاصيل والرسوم الجبارة التي تعيد تعريف الجيمنج عالمياً.
+          </p>
+
+          <!-- Countdown Box -->
+          <div class="countdown-container">
+            <div class="countdown-title">
+              <i class="fa-solid fa-stopwatch" style="color: #f472b6;"></i>
+              <span>العد التنازلي لإطلاق Grand Theft Auto VI:</span>
+            </div>
+            <div class="countdown-grid">
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdDays">00</div>
+                <div class="countdown-unit">أيام</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdHours">00</div>
+                <div class="countdown-unit">ساعات</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdMins">00</div>
+                <div class="countdown-unit">دقائق</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdSecs">00</div>
+                <div class="countdown-unit">ثوانٍ</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="openGameModal('gta6')" style="background: linear-gradient(135deg, #ec4899, #9333ea);">
+              <i class="fa-solid fa-eye"></i>
+              <span>تفاصيل وتوقعات GTA VI</span>
+            </button>
+            <button class="btn-secondary" onclick="openGameModal('gtav')">
+              <i class="fa-solid fa-city"></i>
+              <span>استعراض GTA V & Online</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Poster Box -->
+        <div class="gta-poster-wrap">
+          <img src="assets/games/gta6.jpg" alt="GTA VI Key Art" class="gta-poster-img">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ASSASSIN'S CREED - THE COMPLETE CREED SAGA
+       ========================================================================== -->
+  <section class="creed-saga-section" id="creed-saga">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-scroll"></i> HISTORICAL TIMELINE</span>
+        <h2 class="section-title">رحلة <span class="gradient-text">عقيدة الحشاشين</span> عبر العصور</h2>
+        <p class="section-desc">
+          سلسلة ألعاب Assassin's Creed الكاملة مرتبة زمنياً وتاريخياً من مصر القديمة واليونان إلى بغداد واليابان الإقطاعية.
+        </p>
+      </div>
+
+      <!-- Creed Quote Banner -->
+      <div class="creed-quote-banner">
+        <div class="creed-quote">"لا شيء حقيقي.. كل شيء مباح"</div>
+        <div class="creed-quote-sub gaming-font">"Nothing is true, everything is permitted - The Creed"</div>
+      </div>
+
+      <!-- Horizontal Timeline Track -->
+      <div class="timeline-track-wrap">
+        <div class="timeline-track" id="timelineTrack">
+          <!-- Populated by app.js with all 14 AC games and their eras -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MARAWAN'S BATTLE STATION & RIG SPECS
+       ========================================================================== -->
+  <section class="battle-station-section" id="battle-station">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag" style="background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; color: #fbbf24;">
+          <i class="fa-solid fa-crown"></i> WORLD'S MOST POWERFUL PC • #1 GLOBAL RANK
+        </span>
+        <h2 class="section-title">أقوى جهاز ألعاب في <span class="gradient-text">العالم</span> - Al Khashab God-Tier Rig</h2>
+        <p class="section-desc">
+          وحش الأداء الخارق بلا منازع - تجميعة الأحلام الأقوى عالمياً لكسر أرقام قياسية في الأداء بدقة 8K ومعدل إطارات يتجاوز 240FPS مع تبريد مائي مخصص وإضاءة نيون بنفسجية متزامنة.
+        </p>
+      </div>
+
+      <div class="rig-grid">
+        
+        <!-- Setup Visual Card -->
+        <div class="rig-preview-card" style="border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 35px rgba(245, 158, 11, 0.25);">
+          <div class="rig-photo-wrapper">
+            <img src="assets/hero.jpg" alt="Al Khashab Ultimate Monster PC" class="rig-photo">
+            <div class="rig-photo-overlay-tag" style="border-color: #fbbf24; color: #fbbf24;">
+              <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i>
+              WORLD RECORD GOD-TIER RIG
+            </div>
+          </div>
+          <div style="margin-top: 1.2rem; text-align: center;">
+            <h4 style="font-size: 1.2rem; font-weight: 900; color: #fff;">تجميعة النخبة العالمية (World #1 Battlestation)</h4>
+            <p style="font-size: 0.88rem; color: var(--purple-bright); margin-top: 4px;">
+              تبريد مائي مفتوح Hard-Tube بنفسجي نيون، ألواح Nanoleaf الذكية، وشعار الذئب الأسطوري
+            </p>
+          </div>
+        </div>
+
+        <!-- Specs Cards Grid -->
+        <div class="rig-specs-list">
+          
+          <!-- CPU -->
+          <div class="spec-card" style="border-color: rgba(245, 158, 11, 0.35);">
+            <div class="spec-icon-box" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: #f59e0b;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="spec-details">
+              <h5 style="color: #fbbf24;">أقوى معالج في العالم (Extreme Processor)</h5>
+              <h4>Intel Core i9-14900KS Special Edition</h4>
+              <p>24 Cores / 32 Threads @ 6.20 GHz Extreme Overclocked</p>
+            </div>
+          </div>
+
+          <!-- GPU -->
+          <div class="spec-card" style="border-color: rgba(236, 72, 153, 0.4);">
+            <div class="spec-icon-box" style="background: rgba(236, 72, 153, 0.2); color: #f472b6; border-color: var(--magenta-neon);">
+              <i class="fa-solid fa-dragon"></i>
+            </div>
+            <div class="spec-details">
+              <h5 style="color: #f472b6;">كارت الشاشة الوحش (The GPU King)</h5>
+              <h4>NVIDIA GeForce RTX 5090 / 4090 Liquid Edition</h4>
+              <p>32GB GDDR7 512-bit • 8K Gaming @ 200+ FPS Ray Tracing</p>
+            </div>
+          </div>
+
+          <!-- RAM -->
+          <div class="spec-card">
+            <div class="spec-icon-box"><i class="fa-solid fa-memory"></i></div>
+            <div class="spec-details">
+              <h5>الذاكرة العشوائية الأضخم (Extreme RAM)</h5>
+              <h4>128GB DDR5 8200MHz CL32 Quad-Channel</h4>
+              <p>Corsair Dominator Titanium Extreme Overclocked</p>
+            </div>
+          </div>
+
+          <!-- STORAGE -->
+          <div class="spec-card">
+            <div class="spec-icon-box"><i class="fa-solid fa-hard-drive"></i></div>
+            <div class="spec-details">
+              <h5>التخزين الخارق (Hyper Gen5 NVMe Storage)</h5>
+              <h4>16TB PCIe Gen5 M.2 SSD (RAID 0 Array)</h4>
+              <p>قراءة: 14,900 MB/s | كتابة: 12,800 MB/s (صفر ثوانٍ تحميل)</p>
+            </div>
+          </div>
+
+          <!-- DISPLAY -->
+          <div class="spec-card">
+            <div class="spec-icon-box"><i class="fa-solid fa-tv"></i></div>
+            <div class="spec-details">
+              <h5>شاشات الأحلام (Ultra Displays Setup)</h5>
+              <h4>Samsung Odyssey Neo G9 57" Dual 4K 240Hz</h4>
+              <p>7680x2160 Mini-LED 1000R + شاشة ثانوية 32" OLED 4K للستريم</p>
+            </div>
+          </div>
+
+          <!-- COOLING & POWER -->
+          <div class="spec-card">
+            <div class="spec-icon-box" style="background: rgba(6, 182, 212, 0.2); color: #38bdf8; border-color: #06b6d4;">
+              <i class="fa-solid fa-snowflake"></i>
+            </div>
+            <div class="spec-details">
+              <h5 style="color: #38bdf8;">التبريد المائي والباور (Custom Loop & PSU)</h5>
+              <h4>Custom Hard-Tube Dual Loop Purple ARGB</h4>
+              <p>ASUS ROG Thor 1600W Titanium Gen5 مع شاشة OLED لاستهلاك الواط</p>
+            </div>
+          </div>
+
+          <!-- KEYBOARD & MOUSE -->
+          <div class="spec-card">
+            <div class="spec-icon-box"><i class="fa-solid fa-keyboard"></i></div>
+            <div class="spec-details">
+              <h5>ملحقات الإيسبورتس (Esports Pro Peripherals)</h5>
+              <h4>Wooting 80HE Hall Effect + Razer Signature Edition</h4>
+              <p>استجابة 0.1ms Rapid Trigger + اقتراع 8000Hz هيكل مغنيسيوم</p>
+            </div>
+          </div>
+
+          <!-- STUDIO AUDIO -->
+          <div class="spec-card">
+            <div class="spec-icon-box"><i class="fa-solid fa-headphones"></i></div>
+            <div class="spec-details">
+              <h5>منظومة الصوت واستوديو البث (Studio Grade Audio)</h5>
+              <h4>Sennheiser HD 800 S + Shure SM7B + GoXLR</h4>
+              <p>صوت محيطي مكاني ثلاثي الأبعاد 3D Spatial Audio مع عزل استوديو فائق</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMMUNITY & LIVE STREAM ZONE (WOLF CLAN)
+       ========================================================================== -->
+  <section class="community-section" id="community">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-wolf-pack-white"></i> WOLF CLAN</span>
+        <h2 class="section-title">انضم إلى مجتمع <span class="gradient-text">عشيرة الذئاب</span></h2>
+        <p class="section-desc">
+          تواصل مع مروان الخشاب وباقي اللاعبين، شارك في البطولات والسطوات، وتابع البثوث المباشرة يومياً.
+        </p>
+      </div>
+
+      <div class="community-grid">
+        
+        <!-- Discord Card -->
+        <div class="community-card">
+          <div class="community-icon icon-discord">
+            <i class="fa-brands fa-discord"></i>
+          </div>
+          <h3>سيرفر الديسكورد الرسمي</h3>
+          <p>
+            مكان تجمع كل لاعبي فالورانت و GTA وأساسنز كريد. رومات صوتية، تنظيم بطولات، وتحديثات حصرية يومية.
+          </p>
+          <a href="https://discord.gg/3eEY8WjjnR" target="_blank" rel="noopener" class="btn-community-join btn-discord">
+            <i class="fa-brands fa-discord"></i>
+            <span>انضم لسيرفر الديسكورد (اضغط هنا)</span>
+          </a>
+        </div>
+
+        <!-- TikTok Card -->
+        <div class="community-card">
+          <div class="community-icon icon-tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+          <h3>حساب التيك توك الرسمي</h3>
+          <p>
+            فيديوهات ومقاطع يومية، أقوى لقطات الكلتشات وتحديات فالورانت و GTA V الحصرية على تيك توك.
+          </p>
+          <a href="https://www.tiktok.com/@marawan_alkhashab?" target="_blank" rel="noopener" class="btn-community-join btn-tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>تابعنا على تيك توك (اضغط هنا)</span>
+          </a>
+        </div>
+
+        <!-- YouTube Card -->
+        <div class="community-card">
+          <div class="community-icon icon-youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <h3>قناة اليوتيوب الرسمية</h3>
+          <p>
+            أقوى اللقطات (Clutches)، ملخصات البطولات، شروحات القصة والتختيم الكامل لألعاب الـ AAA.
+          </p>
+          <a href="https://youtube.com/@marawan_alkhashab?si=brAQq0bWn7FOIb8-" target="_blank" rel="noopener" class="btn-community-join btn-youtube">
+            <i class="fa-brands fa-youtube"></i>
+            <span>اشترك في قناة يوتيوب (اضغط هنا)</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE GAME DETAILS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="gameModal" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      
+      <!-- Close Button -->
+      <button class="modal-close-btn" onclick="closeGameModal()" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Top Banner Image -->
+      <div class="modal-banner">
+        <img src="" alt="" id="modalImg" class="modal-banner-img">
+        <div class="modal-banner-overlay"></div>
+        
+        <div class="modal-header-content">
+          <div class="modal-tags" id="modalTags"></div>
+          <h2 class="modal-title" id="modalTitle">اسم اللعبة</h2>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- Info Grid -->
+        <div class="modal-info-grid">
+          <div class="modal-info-item">
+            <div class="label">تاريخ الإصدار</div>
+            <div class="val" id="modalYear">2024</div>
+          </div>
+          <div class="modal-info-item">
+            <div class="label">التقييم العالمي</div>
+            <div class="val" id="modalRating">9.5/10</div>
+          </div>
+          <div class="modal-info-item">
+            <div class="label">المطور / الناشر</div>
+            <div class="val" id="modalDeveloper">Rockstar</div>
+          </div>
+          <div class="modal-info-item">
+            <div class="label">التصنيف والنوع</div>
+            <div class="val" id="modalGenre">عالم مفتوح</div>
+          </div>
+        </div>
+
+        <!-- Synopsis -->
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem;">
+            <i class="fa-solid fa-book-open" style="color: var(--purple-bright);"></i> قصة اللعبة ومميزاتها
+          </h4>
+          <p class="modal-synopsis" id="modalSynopsis"></p>
+        </div>
+
+        <!-- System Requirements Box -->
+        <div class="modal-specs-box">
+          <div class="modal-specs-title">
+            <i class="fa-solid fa-server" style="color: var(--purple-bright);"></i>
+            <span>متطلبات تشغيل اللعبة (System Requirements)</span>
+          </div>
+
+          <div class="specs-details-grid">
+            
+            <!-- Minimum -->
+            <div class="spec-req-item">
+              <h6>الحد الأدنى للتشغيل (Minimum):</h6>
+              <p>• المعالج: <span id="modalCpuMin"></span></p>
+              <p>• كارت الشاشة: <span id="modalGpuMin"></span></p>
+              <p>• الرام: <span id="modalRamMin"></span></p>
+            </div>
+
+            <!-- Recommended -->
+            <div class="spec-req-item">
+              <h6>الموصى به للأداء العالي (Recommended):</h6>
+              <p>• المعالج: <span id="modalCpuRec"></span></p>
+              <p>• كارت الشاشة: <span id="modalGpuRec"></span></p>
+              <p>• الرام: <span id="modalRamRec"></span></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener" id="modalPlayBtn" class="btn-primary">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>الانتقال للمتجر أو اللعب الآن</span>
+          </a>
+          <button class="btn-secondary" onclick="closeGameModal()">
+            <span>إغلاق النافذة</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div>
+          <a href="#hero" class="nav-brand">
+            <div class="brand-wolf-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L9.5 7L4 8L7.5 12.5L6.5 18L12 15.5L17.5 18L16.5 12.5L20 8L14.5 7L12 2Z"/>
+              </svg>
+            </div>
+            <div class="brand-titles">
+              <span class="brand-title-ar">Al Khashab</span>
+              <span class="brand-title-en">GAMING PORTAL</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            البوابة الاحترافية الرسمية للألعاب والرياضات الإلكترونية. صُممت بشغف لعشاق الألعاب والذئاب، متألقة بأنوار النيون البنفسجية وأقوى مكتبة ألعاب تنافسية وقصصية.
+          </p>
+        </div>
+
+        <!-- Col 2: Games Quick Links -->
+        <div class="footer-col">
+          <h4>أقسام الألعاب</h4>
+          <ul class="footer-links">
+            <li><a href="#valorant-hub">تكتيكات فالورانت (Valorant)</a></li>
+            <li><a href="#gta-universe">عالم Grand Theft Auto</a></li>
+            <li><a href="#gta-universe">العد التنازلي لـ GTA VI</a></li>
+            <li><a href="#creed-saga">سلسلة Assassin's Creed الكاملة</a></li>
+            <li><a href="#games">جميع الألعاب المتاحة (20 لعبة)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hardware & Setup -->
+        <div class="footer-col">
+          <h4>السيت أب والعتاد الخارق</h4>
+          <ul class="footer-links">
+            <li><a href="#battle-station">أقوى PC ألعاب في العالم</a></li>
+            <li><a href="#battle-station">كارت RTX 5090 / 4090 Monster 32GB</a></li>
+            <li><a href="#battle-station">معالج i9-14900KS المكسور لـ 6.2GHz</a></li>
+            <li><a href="#battle-station">شاشة 57" Dual 4K 240Hz Mini-LED</a></li>
+            <li><a href="#battle-station">رامات 128GB DDR5 8200MHz</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Clan Community -->
+        <div class="footer-col">
+          <h4>عشيرة الذئاب (Wolf Clan)</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/3eEY8WjjnR" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i> سيرفر الديسكورد الرسمي</a></li>
+            <li><a href="https://www.tiktok.com/@marawan_alkhashab?" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> حساب التيك توك الرسمي</a></li>
+            <li><a href="https://youtube.com/@marawan_alkhashab?si=brAQq0bWn7FOIb8-" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> قناة اليوتيوب الرسمية</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> إنستغرام</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          جميع الحقوق محفوظة © 2026 <strong style="color: #fff;">Al Khashab</strong> | Al Khashab Gaming Hub
+        </div>
+        <div>
+          <span>Crafted with Cyber Violet Glow & <span class="wolf-tag">Wolf Gaming Power</span></span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="الرجوع للأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>

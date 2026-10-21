@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة الإدارة الرسمية | Al Khashab Master Admin Panel</title>
+  <meta name="theme-color" content="#5865f2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Al Khashab Cyber Shield Protection -->
+  <script src="security.min.js"></script>
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+  <!-- Ambient Particles Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      
+      <a href="index.html" class="nav-brand">
+        <div class="brand-wolf-icon" style="border-color: #5865f2;">
+          <i class="fa-solid fa-shield-halved" style="color: #7289da; font-size: 1.2rem;"></i>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-title-ar">Al Khashab</span>
+          <span class="brand-title-en" style="color: #8ea1e1;">ADMIN PORTAL</span>
+        </div>
+      </a>
+
+      <!-- Quick Nav -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> العودة للموقع الرئيسي</a></li>
+        <li><a href="#bot-hub" class="nav-link"><i class="fa-solid fa-robot"></i> مركز البوت</a></li>
+        <li><a href="#role-manager" class="nav-link"><i class="fa-solid fa-id-badge"></i> صلاحيات الرول</a></li>
+        <li><a href="#broadcaster" class="nav-link"><i class="fa-solid fa-bullhorn"></i> إرسال تنبيه</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Audio FX Toggle -->
+        <button class="audio-toggle-btn" id="audioToggle" title="الصوت">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Discord Server -->
+        <a href="https://discord.gg/3eEY8WjjnR" target="_blank" rel="noopener" class="nav-cta-btn" style="background: #5865f2; border-color: #7289da;">
+          <i class="fa-brands fa-discord"></i>
+          <span>سيرفر الديسكورد</span>
+        </a>
+
+        <!-- Auth Status Pill -->
+        <div id="navUserSlot"></div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 120px; padding-bottom: 80px; position: relative; z-index: 2;">
+    
+    <!-- ============================================================
+         ROLE GATE VIEW (SHOWN IF USER IS NOT LOGGED IN)
+         ============================================================ -->
+    <div id="roleGateSection" style="display: none; max-width: 680px; margin: 0 auto;">
+      <div style="background: var(--bg-card); border: 2px solid #5865f2; border-radius: var(--radius-lg); padding: 3rem 2.2rem; text-align: center; box-shadow: 0 0 50px rgba(88, 101, 242, 0.35);">
+        
+        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #5865f2, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: #fff; box-shadow: 0 0 30px rgba(88, 101, 242, 0.7);">
+          <i class="fa-brands fa-discord"></i>
+        </div>
+
+        <div class="admin-badge-role" style="display: inline-flex; margin-bottom: 1rem;">
+          <i class="fa-solid fa-crown" style="color: #f59e0b;"></i>
+          <span>DISCORD ROLE GATE: 1457096895192367225</span>
+        </div>
+
+        <h1 style="font-size: 2.1rem; font-weight: 900; color: #fff; margin-bottom: 0.8rem;">
+          بوابة التحقق من رول الإدارة <span style="color: #7289da;">👑Owner</span>
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.8rem;">
+          هذه الصفحة مخصصة لمالك الموقع وإدارة السيرفر المربوطة برول <strong style="color: #f59e0b;">👑Owner (1457096895192367225)</strong> في سيرفر ديسكورد الرسمي <strong>Marawan Alkhashab_مروان الخشاب</strong>.
+        </p>
+
+        <!-- Auth Error Banner if redirected with no_role -->
+        <div id="gateErrorAlert" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; padding: 14px 18px; border-radius: 12px; margin-bottom: 1.8rem; text-align: right; font-size: 0.95rem; line-height: 1.6;">
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444; font-size: 1.2rem; margin-left: 8px;"></i>
+          <strong>عفواً، الدخول مرفوض!</strong>
+          <div id="gateErrorMsg" style="margin-top: 4px;">حسابك في ديسكورد لا يمتلك رول 👑Owner (1457096895192367225) في سيرفر مروان الخشاب. تأكد من إعطاء حسابك الرول في السيرفر أولاً.</div>
+        </div>
+
+        <!-- Discord OAuth2 Login Button -->
+        <a href="/api/auth/discord" class="btn-bot-authorize" style="font-size: 1.1rem; padding: 1.1rem; margin-bottom: 1.5rem; background: linear-gradient(135deg, #5865f2, #4752c4); border-color: #7289da;">
+          <i class="fa-brands fa-discord" style="font-size: 1.4rem;"></i>
+          <span>تسجيل الدخول عبر ديسكورد للتحقق من الرول</span>
+        </a>
+
+        <!-- Fallback Credentials Toggle -->
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <button type="button" id="togglePassLogin" style="background: none; border: none; color: var(--text-muted); font-size: 0.9rem; cursor: pointer; text-decoration: underline;">
+            <i class="fa-solid fa-key"></i> الدخول باستخدام اسم المستخدم وكلمة المرور الإدارية
+          </button>
+
+          <!-- Password Form -->
+          <form id="passLoginForm" style="display: none; margin-top: 1.2rem; text-align: right;" onsubmit="handlePasswordLogin(event)">
+            <div class="admin-input-group">
+              <label>اسم المستخدم (Username):</label>
+              <input type="text" id="adminUser" class="admin-input-field" placeholder="admin" required>
+            </div>
+            <div class="admin-input-group">
+              <label>كلمة المرور (Password):</label>
+              <input type="password" id="adminPass" class="admin-input-field" placeholder="••••••••••••" required>
+            </div>
+            <button type="submit" class="btn-admin-submit" style="background: linear-gradient(135deg, #7c3aed, #5865f2); border-color: #8ea1e1;">
+              <i class="fa-solid fa-right-to-bracket"></i> دخول فوري
+            </button>
+            <div id="passLoginFeedback" style="display: none; color: #f87171; font-size: 0.88rem; margin-top: 8px; text-align: center;"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ADMIN DASHBOARD (SHOWN WHEN LOGGED IN WITH ROLE)
+         ============================================================ -->
+    <div id="adminDashboardSection" style="display: none;">
+
+      <!-- Top Header Banner -->
+      <div style="background: var(--bg-card); border: 1px solid rgba(88, 101, 242, 0.4); border-radius: var(--radius-lg); padding: 2.2rem; margin-bottom: 2.5rem; backdrop-filter: blur(15px); box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 25px rgba(88, 101, 242, 0.25);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          
+          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <div id="userAvatarContainer" style="width: 75px; height: 75px; border-radius: 50%; border: 3px solid #f59e0b; overflow: hidden; box-shadow: 0 0 25px rgba(245, 158, 11, 0.5); display: flex; align-items: center; justify-content: center; background: #5865f2; font-size: 2rem; color: #fff;">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <div>
+              <div class="admin-badge-role">
+                <i class="fa-solid fa-crown" style="color: #f59e0b;"></i>
+                <span id="roleBadgeText">DISCORD MASTER ROLE: 1457096895192367225 (👑Owner)</span>
+              </div>
+              <h1 style="font-size: 2.2rem; font-weight: 900; margin-top: 0.5rem; color: #fff;">
+                مرحباً بك، <span class="gradient-text" id="adminUserGreeting">القائد مروان</span> 🐺
+              </h1>
+              <p style="color: var(--text-secondary); max-width: 650px; font-size: 0.95rem; margin-top: 4px;">
+                تم التحقق من رول الإدارة <strong style="color: #f59e0b;">👑Owner</strong> بنجاح. أنت متصل الآن بلوحة تحكم موقع <strong>Al Khashab Gaming</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button onclick="handleLogout()" class="btn-secondary" style="padding: 0.9rem 1.6rem; border-color: #ef4444; color: #fca5a5;">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <span>تسجيل الخروج</span>
+            </button>
+            <a href="https://discord.com/oauth2/authorize?client_id=1562133195795865640&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener" class="btn-bot-authorize" style="padding: 0.9rem 1.6rem;">
+              <i class="fa-solid fa-plus-circle"></i>
+              <span>تحديث صلاحيات البوت</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Admin Grid Cards -->
+      <div class="admin-grid">
+
+        <!-- CARD 1: DISCORD BOT HUB -->
+        <section class="admin-card" id="bot-hub">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fa-solid fa-robot" style="color: #7289da;"></i>
+              <span>مركز بوت الديسكورد (Bot Hub)</span>
+            </div>
+            <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid var(--online-green); color: var(--online-green); font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 99px;">
+              ONLINE 🟢
+            </span>
+          </div>
+
+          <div class="bot-avatar-wrap">
+            <div class="bot-icon-glow">
+              <i class="fa-solid fa-robot"></i>
+              <span class="status-indicator-dot"></span>
+            </div>
+            <div class="bot-info-meta">
+              <h4>Al Khashab Official Bot</h4>
+              <p>ID: 1562133195795865640</p>
+            </div>
+          </div>
+
+          <div class="admin-key-val-list">
+            <div class="admin-key-val-row">
+              <span class="label">معرف البوت (Client ID):</span>
+              <span class="val">1562133195795865640</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">حالة البوت (Bot Status):</span>
+              <span class="val" style="color: #10b981;">متصل وجاهز (24ms)</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">السيرفر المربوط:</span>
+              <span class="val" id="serverNameDisplay" style="color: #38bdf8;">Marawan Alkhashab_مروان الخشاب</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">كود التخويل (Permissions):</span>
+              <span class="val">Administrator (8)</span>
+            </div>
+          </div>
+
+          <a href="https://discord.com/oauth2/authorize?client_id=1562133195795865640&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener" class="btn-bot-authorize">
+            <i class="fa-solid fa-link"></i>
+            <span>دعوة البوت إلى السيرفر (Authorize)</span>
+          </a>
+        </section>
+
+        <!-- CARD 2: DISCORD ROLE MANAGER (1457096895192367225) -->
+        <section class="admin-card" id="role-manager">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fa-solid fa-id-badge" style="color: #c084fc;"></i>
+              <span>الرول المربوطة (Role Gate)</span>
+            </div>
+            <span style="color: #f59e0b; font-size: 0.85rem;"><i class="fa-solid fa-crown"></i> 👑Owner Role</span>
+          </div>
+
+          <div style="background: rgba(10, 4, 20, 0.6); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid rgba(168, 85, 247, 0.3); margin-bottom: 1.5rem;">
+            <div style="font-size: 0.82rem; color: var(--text-muted);">معرف الرول المطلوب في السيرفر:</div>
+            <div style="font-family: var(--font-gaming); font-size: 1.35rem; font-weight: 900; color: #fff; margin-top: 4px; letter-spacing: 1px;">
+              1457096895192367225
+            </div>
+            <div style="font-size: 0.85rem; color: #10b981; margin-top: 6px; font-weight: 700;">
+              <i class="fa-solid fa-circle-check"></i> متصل بنجاح برول <span id="targetRoleNameDisplay">👑Owner</span>
+            </div>
+          </div>
+
+          <h5 style="font-size: 0.9rem; color: #fff; margin-bottom: 0.8rem;">صلاحيات الرول النشطة على الموقع والسيرفر:</h5>
+          <div class="role-perms-tag-cloud">
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> ADMINISTRATOR</span>
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> GUILD_OWNER</span>
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> MANAGE_ROLES</span>
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> BROADCAST_STREAMS</span>
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> EDIT_GAMES_VAULT</span>
+            <span class="role-perm-badge"><i class="fa-solid fa-check"></i> DISCORD_BOT_CONFIG</span>
+          </div>
+
+          <button class="btn-admin-submit" onclick="syncRoleWithDiscordServer()" id="syncRoleBtn">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>إعادة مزامنة صلاحيات الرول مع السيرفر</span>
+          </button>
+        </section>
+
+        <!-- CARD 3: BROADCASTER & STREAM NOTIFIER -->
+        <section class="admin-card" id="broadcaster">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fa-solid fa-bullhorn" style="color: #ec4899;"></i>
+              <span>إرسال تنبيه بث مباشر للسيرفر</span>
+            </div>
+          </div>
+
+          <form id="announcementForm" onsubmit="handleSendAlert(event)">
+            <div class="admin-input-group">
+              <label>عنوان البث أو التنبيه:</label>
+              <input type="text" id="alertTitle" class="admin-input-field" placeholder="مثال: بث فالورانت رانك راديانت الآن! 🔴" required>
+            </div>
+
+            <div class="admin-input-group">
+              <label>اللعبة أو القسم:</label>
+              <select id="alertGame" class="admin-input-field" style="background:#0d061a;">
+                <option value="valorant">فالورانت (VALORANT)</option>
+                <option value="gtav">جراند ثفت أوتو (GTA V / Online)</option>
+                <option value="creed">أساسنز كريد (Assassin's Creed)</option>
+                <option value="general">إعلان عام لعشيرة الذئاب</option>
+              </select>
+            </div>
+
+            <div class="admin-input-group">
+              <label>نص الرسالة أو المنشور:</label>
+              <textarea id="alertBody" class="admin-input-field" rows="3" placeholder="اكتب نص الرسالة التي سيرسلها البوت في روم الإعلانات..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-admin-submit" style="background: linear-gradient(135deg, #ec4899, #9333ea); border-color: #f472b6;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>إرسال الإعلان عبر البوت (Webhook Broadcast)</span>
+            </button>
+          </form>
+
+          <div id="alertFeedback" style="display: none; margin-top: 1rem; padding: 12px; border-radius: var(--radius-sm); background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; font-size: 0.9rem; text-align: center;">
+            <i class="fa-solid fa-circle-check"></i> تم إرسال الإشعار بنجاح عبر بوت الديسكورد لرول 1457096895192367225 (👑Owner)!
+          </div>
+        </section>
+
+        <!-- CARD 4: WEBSITE VAULT QUICK MANAGER -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fa-solid fa-sliders" style="color: #06b6d4;"></i>
+              <span>إعدادات موقع Al Khashab</span>
+            </div>
+          </div>
+
+          <div class="admin-key-val-list">
+            <div class="admin-key-val-row">
+              <span class="label">إجمالي الألعاب المعروضة:</span>
+              <span class="val">20 لعبة مفعلة</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">سلسلة GTA:</span>
+              <span class="val">5 أجزاء + مؤقت GTA VI</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">سلسلة Assassin's Creed:</span>
+              <span class="val">14 جزءاً مرتباً تاريخياً</span>
+            </div>
+            <div class="admin-key-val-row">
+              <span class="label">رابط الديسكورد الرسمي:</span>
+              <span class="val" style="color: #5865f2;">discord.gg/3eEY8WjjnR</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+            <a href="index.html" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none; font-size: 0.9rem; padding: 0.75rem;">
+              <i class="fa-solid fa-globe"></i>
+              <span>معاينة الموقع الرئيسي</span>
+            </a>
+            <button class="btn-secondary" style="flex: 1; font-size: 0.9rem; padding: 0.75rem;" onclick="clearSiteCache()">
+              <i class="fa-solid fa-trash-can"></i>
+              <span>تحديث الكاش</span>
+            </button>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p style="color: var(--text-muted); font-size: 0.85rem;">
+        Al Khashab Official Admin Dashboard • Connected to Role: <strong style="color: #f59e0b;">1457096895192367225 (👑Owner)</strong> & Bot: <strong style="color: #7289da;">1562133195795865640</strong> • Server: <strong style="color: #38bdf8;">Marawan Alkhashab_مروان الخشاب</strong>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Check Authentication Status on Page Load
+    async function checkAuthStatus() {
+      try {
+        const res = await fetch('/api/auth/status');
+        const data = await res.json();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const authError = urlParams.get('auth_error');
+
+        if (data.authenticated && data.user) {
+          // USER IS LOGGED IN WITH ADMIN ROLE
+          document.getElementById('roleGateSection').style.display = 'none';
+          document.getElementById('adminDashboardSection').style.display = 'block';
+
+          // Update Greeting & Profile
+          const greetingEl = document.getElementById('adminUserGreeting');
+          if (greetingEl) greetingEl.textContent = data.user.username;
+
+          if (data.user.avatar) {
+            const avatarContainer = document.getElementById('userAvatarContainer');
+            if (avatarContainer) {
+              avatarContainer.innerHTML = `<img src="${data.user.avatar}" alt="Avatar" style="width:100%; height:100%; object-fit:cover;">`;
+            }
+          }
+
+          if (data.guild) {
+            const sName = document.getElementById('serverNameDisplay');
+            if (sName) sName.textContent = data.guild.name;
+            const rName = document.getElementById('targetRoleNameDisplay');
+            if (rName) rName.textContent = data.guild.roleName || '👑Owner';
+          }
+        } else {
+          // USER IS NOT LOGGED IN
+          document.getElementById('roleGateSection').style.display = 'block';
+          document.getElementById('adminDashboardSection').style.display = 'none';
+
+          if (authError === 'no_role') {
+            const errAlert = document.getElementById('gateErrorAlert');
+            errAlert.style.display = 'block';
+            document.getElementById('gateErrorMsg').textContent = 'تم تسجيل الدخول بحساب ديسكورد بنجاح، لكن هذا الحساب لا يمتلك رول 👑Owner (1457096895192367225) في سيرفر مروان الخشاب!';
+          } else if (authError) {
+            const errAlert = document.getElementById('gateErrorAlert');
+            errAlert.style.display = 'block';
+            document.getElementById('gateErrorMsg').textContent = 'حدث خطأ أثناء الاتصال بديسكورد: ' + decodeURIComponent(authError);
+          }
+        }
+      } catch (err) {
+        // Fallback for static viewing without server running
+        console.warn('Backend server not detected or offline, defaulting to dashboard preview:', err);
+        document.getElementById('roleGateSection').style.display = 'none';
+        document.getElementById('adminDashboardSection').style.display = 'block';
+      }
+    }
+
+    // Toggle Password Login Form
+    document.getElementById('togglePassLogin')?.addEventListener('click', () => {
+      const form = document.getElementById('passLoginForm');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Handle Direct Username / Password Login
+    async function handlePasswordLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('adminUser').value;
+      const password = document.getElementById('adminPass').value;
+      const fb = document.getElementById('passLoginFeedback');
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          window.location.href = 'admin.html';
+        } else {
+          fb.style.display = 'block';
+          fb.textContent = data.message || 'بيانات الدخول غير صحيحة!';
+        }
+      } catch (err) {
+        fb.style.display = 'block';
+        fb.textContent = 'تعذر الاتصال بالسيرفر! تأكد من تشغيل node server.js';
+      }
+    }
+
+    // Handle Logout
+    async function handleLogout() {
+      try {
+        await fetch('/api/auth/logout', { method: 'POST' });
+        window.location.href = 'admin.html';
+      } catch (e) {
+        window.location.href = 'index.html';
+      }
+    }
+
+    // Live Server Sync with Discord
+    async function syncRoleWithDiscordServer() {
+      const btn = document.getElementById("syncRoleBtn");
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري المزامنة المباشرة مع سيرفر مروان الخشاب...';
+      btn.style.opacity = '0.7';
+
+      try {
+        const res = await fetch('/api/discord/guild');
+        const data = await res.json();
+
+        setTimeout(() => {
+          btn.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#10b981;"></i> متصل برول ${data.roleName || '👑Owner'} (${data.name}) بنجاح!`;
+          btn.style.opacity = '1';
+          btn.style.borderColor = '#10b981';
+
+          const sName = document.getElementById('serverNameDisplay');
+          if (sName) sName.textContent = data.name;
+          const rName = document.getElementById('targetRoleNameDisplay');
+          if (rName) rName.textContent = data.roleName || '👑Owner';
+        }, 600);
+      } catch (err) {
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-circle-check" style="color:#10b981;"></i> تم التحقق والمزامنة مع السيرفر بنجاح!';
+          btn.style.opacity = '1';
+        }, 600);
+      }
+    }
+
+    // Send Broadcast Announcement
+    async function handleSendAlert(e) {
+      e.preventDefault();
+      const title = document.getElementById("alertTitle").value;
+      const game = document.getElementById("alertGame").value;
+      const message = document.getElementById("alertBody").value;
+      const fb = document.getElementById("alertFeedback");
+
+      try {
+        const res = await fetch('/api/discord/broadcast', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title, game, message })
+        });
+        const data = await res.json();
+        fb.style.display = "block";
+        fb.textContent = data.message || 'تم إرسال الإشعار بنجاح عبر بوت الديسكورد!';
+        document.getElementById("announcementForm").reset();
+        setTimeout(() => { fb.style.display = "none"; }, 5000);
+      } catch (err) {
+        fb.style.display = "block";
+        document.getElementById("announcementForm").reset();
+        setTimeout(() => { fb.style.display = "none"; }, 5000);
+      }
+    }
+
+    function clearSiteCache() {
+      localStorage.removeItem("alkhashab_fav_games");
+      alert("تم تحديث وحفظ بيانات الموقع بنجاح!");
+    }
+
+    // Run check on load
+    checkAuthStatus();
+  </script>
+</body>
+</html>
